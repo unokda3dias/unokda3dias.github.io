@@ -1,0 +1,65 @@
+/* UnoKda_3_Días — apartado de preinscripción, versión de revisión. */
+.application-page {background:var(--paper)}
+.apply-nav{display:flex;flex-wrap:wrap;gap:clamp(12px,2vw,28px);align-items:center}
+.apply-nav a{color:var(--ivory);text-decoration:none;font-size:.88rem;font-weight:600}
+.apply-nav a:hover{text-decoration:underline;text-decoration-color:var(--gold)}
+.apply-hero{background:var(--paper);overflow:hidden}
+.apply-hero__grid{display:grid;grid-template-columns:minmax(0,1.13fr) minmax(340px,.87fr);min-height:620px;align-items:stretch}
+.apply-hero__body{padding:clamp(74px,9vw,150px) clamp(32px,5vw,84px) clamp(76px,9vw,135px) 0;align-self:center}
+.apply-hero h1{font:500 clamp(2.8rem,5.6vw,6.2rem)/1.065 var(--font-editorial);max-width:12ch;margin-top:28px;letter-spacing:-.035em}
+.apply-hero h1 em{font-weight:400;color:var(--gold-dark)}
+.apply-lede{font:500 clamp(1.23rem,1.7vw,1.55rem)/1.5 var(--font-editorial);margin-top:30px;max-width:39ch}
+.apply-lede+p{color:var(--ink-muted);margin-top:18px;max-width:48ch}
+.apply-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.apply-hero__panel{position:relative;display:flex;min-height:550px;padding:60px;align-items:center;background:linear-gradient(145deg,#535043,#292a29 80%);color:var(--paper);overflow:hidden}
+.apply-hero__panel::before{content:'';position:absolute;width:85%;aspect-ratio:1;right:-24%;bottom:-29%;border:clamp(40px,7vw,95px) solid rgba(212,183,117,.23);border-radius:100% 100% 0 0;transform:rotate(-14deg)}
+.apply-hero__panel::after{content:'';position:absolute;inset:16px;border:1px solid rgba(243,239,230,.16);pointer-events:none}
+.apply-hero__panel-inner{z-index:1;position:relative;display:flex;flex-direction:column;min-height:330px;justify-content:space-between}
+.apply-hero__number,.apply-hero__kicker,.apply-hero__panel-credit{color:#e1d8c6;text-transform:uppercase;letter-spacing:.16em;font-size:.72rem}
+.apply-hero__quote{font:400 clamp(2.4rem,4vw,4.8rem)/1.1 var(--font-editorial);max-width:13ch;margin:42px 0}
+.apply-notice{display:grid;grid-template-columns:8px 1fr;gap:24px;background:#eee9df;border:1px solid var(--hairline);padding-block:25px;padding-inline:25px;margin-block:42px 0}
+.apply-notice__line{background:var(--gold-dark)}
+.apply-notice h2{font:500 clamp(1.3rem,2vw,1.8rem)/1.25 var(--font-editorial);margin:6px 0}
+.apply-notice p:last-child{font-size:.93rem;color:var(--ink-muted)}
+.apply-heading{max-width:860px;margin-bottom:45px}
+.apply-heading h2,.apply-form-area h2,.apply-faq-layout h2{font-size:clamp(2.1rem,4vw,4.3rem);margin:12px 0 19px;max-width:17ch}
+.apply-heading>p:last-child{color:var(--ink-muted);max-width:65ch}
+.apply-section--paper{background:var(--ivory)}
+.apply-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));list-style:none;gap:20px;padding:0}
+.apply-steps li{padding:32px 22px 30px;border-top:1px solid var(--gold-dark);background:#f1ece3}
+.apply-step-number{font:400 2.6rem/1 var(--font-editorial);color:var(--gold-dark)}
+.apply-steps h3{font-size:1.43rem;margin:28px 0 14px}
+.apply-steps p,.apply-doc-grid p{color:var(--ink-muted);font-size:.92rem}
+.apply-doc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.apply-doc-grid article{border:1px solid var(--hairline);padding:29px;min-height:235px;background:var(--paper)}
+.apply-doc-grid article>span{font:500 .77rem var(--font-interface);letter-spacing:.18em;color:var(--gold-dark)}
+.apply-doc-grid h3{font-size:1.52rem;margin:22px 0 12px}
+.apply-drive-note{background:var(--ink);color:var(--ivory);padding:24px 31px;margin-top:25px;font-size:.95rem;max-width:none}
+.apply-drive-note strong{color:var(--gold)}
+.apply-form-area{background:#d9d3c5}
+.apply-form-layout{display:grid;grid-template-columns:1fr .9fr;gap:clamp(35px,7vw,110px);align-items:center}
+.apply-form-layout>div:first-child>p:not(.eyebrow){max-width:53ch;color:var(--ink-muted)}
+.apply-form-card{padding:clamp(25px,4vw,50px);background:var(--paper);border:1px solid var(--hairline)}
+.apply-form-card h3{font-size:clamp(1.8rem,3vw,2.5rem);margin:12px 0 24px}
+.apply-form-card>p:not(.eyebrow){color:var(--ink-muted)}
+.apply-disabled{margin-top:30px;cursor:not-allowed;filter:grayscale(.5);opacity:.65}
+.apply-form-hint{font-size:.82rem;margin-top:12px!important}
+.apply-faq-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px 90px}
+.apply-faq details{border-top:1px solid var(--hairline);padding:19px 0}
+.apply-faq details:last-child{border-bottom:1px solid var(--hairline)}
+.apply-faq summary{cursor:pointer;font-weight:650;padding-right:15px;line-height:1.5}
+.apply-faq details p{color:var(--ink-muted);margin-top:12px;font-size:.94rem}
+@media(max-width:1050px){.apply-hero__grid{grid-template-columns:1.05fr .95fr}.apply-hero__panel{padding:32px}.apply-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.apply-hero__grid,.apply-form-layout,.apply-faq-layout{grid-template-columns:1fr}.apply-hero__body{padding:60px 0}.apply-hero__panel{min-height:360px;margin-inline:calc(-1 * var(--page-gutter))}.apply-nav{gap:10px}.apply-nav a{font-size:.75rem}.apply-doc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.apply-hero h1{font-size:clamp(2.55rem,10vw,3.6rem)}.apply-hero__panel{min-height:340px}.apply-steps,.apply-doc-grid{grid-template-columns:1fr}.apply-steps li{padding:25px}.apply-nav{max-width:65%;justify-content:end}.apply-nav a{font-size:.73rem}.apply-actions{flex-direction:column}.apply-actions .button{width:100%}.apply-notice{margin-top:25px;padding:18px}.apply-doc-grid article{min-height:unset}}
+@media print{.apply-hero__panel,.apply-actions,.apply-form-card button{display:none!important}.apply-hero__grid{min-height:0;display:block}.apply-section{padding-block:35px}}
+
+/* V2 | Proporciones armonizadas con la portada principal. */
+.apply-hero__grid{min-height:580px;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr)}
+.apply-hero__body{padding:70px clamp(28px,4.5vw,70px) 70px 0}
+.apply-hero h1{font-size:clamp(3rem,5.05vw,5rem);max-width:15ch;line-height:1.09}
+.apply-hero__panel{min-height:480px}
+.apply-hero__quote{font-size:clamp(2.15rem,3.45vw,4.1rem)}
+.apply-form-area{background:#ddd5c7}
+.apply-form-card{box-shadow:0 15px 40px rgba(40,30,15,.08)}
+@media(max-width:760px){.apply-hero__grid{grid-template-columns:1fr}.apply-hero__body{padding:55px 0 50px}.apply-hero h1{font-size:clamp(2.7rem,9vw,4.3rem)}.apply-hero__panel{min-height:340px}}

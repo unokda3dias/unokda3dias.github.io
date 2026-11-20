@@ -503,3 +503,183 @@ p + p { margin-top: 1em; }
   .section { padding-block: 24px; }
   a { color: black; }
 }
+
+/* ========================================================================
+   V2 | Revisión museográfica (noviembre 2026)
+   Basada en el carrusel institucional aprobado de UnoKda_3_Días.
+   Las láminas originales no reciben recortes, filtros ni superposiciones.
+   ======================================================================== */
+:root {
+  --content-width: 1392px;
+  --page-gutter: clamp(22px, 4.8vw, 82px);
+  --section-space: clamp(72px, 7.8vw, 112px);
+  --paper: #faf8f3;
+  --ivory: #f2eee5;
+  --stone: #eae5db;
+  --gold-dark: #856635;
+}
+body {font-size: 16px; line-height: 1.68;}
+h1,h2,h3 {letter-spacing: -.032em;}
+.section h2 em, .institutional-copy h2 em, .intro-copy h2 em, .participate-grid h2 em {color: var(--gold-dark);font-weight: 400;}
+.section--video h2 em,.section--participate h2 em{color:#d9bf87}
+.section-index{display:inline-block;margin-right:.85em;color:var(--gold-dark);letter-spacing:.08em;font-weight:700}
+.section--video .section-index,.section--participate .section-index{color:var(--gold)}
+.eyebrow{font-size:.73rem;letter-spacing:.18em}
+.site-header{background:#161719;position:sticky;top:0}
+.site-header__inner{min-height:91px;gap:20px}
+.site-brand img{width:105px;height:78px;object-fit:contain}
+.site-nav ul{gap:clamp(13px,2vw,35px)}
+.site-nav a{font-size:.85rem;letter-spacing:.01em;font-weight:600}
+.site-nav .nav-cta{padding:12px 20px;color:#e1c487;border-color:#bfa26c}
+.site-nav .nav-cta:hover{color:#161719;background:#e1c487}
+.section-heading{align-items:end;gap:20px 70px}
+.section h2{font-size:clamp(2.4rem,4.5vw,4.5rem);line-height:1.09}
+.section-heading>p{font-size:1rem;line-height:1.65;max-width:38ch}
+
+/* Portada: proporciones editoriales reales a zoom de navegador 100 %. */
+.hero{background:#f8f6f1;}
+.hero__layout{display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);align-items:stretch;min-height:650px}
+.hero__copy{min-width:0;align-self:center;padding:68px clamp(20px,4.5vw,78px) 56px 0}
+.hero__eyebrow{display:flex;gap:12px;align-items:center;line-height:1.6}
+.tiny-rule{display:inline-block;flex:none;width:28px;height:1px;background:#96713b}
+.hero h1{max-width:14ch;font-size:clamp(3.1rem,5.25vw,5.45rem);line-height:1.075;letter-spacing:-.047em;margin-top:29px}
+.hero h1 em{display:inline;color:#8b6b35;font-style:italic;font-weight:400}
+.hero__lead{font:500 clamp(1.25rem,1.75vw,1.55rem)/1.43 var(--font-editorial);max-width:34ch;margin-top:29px;color:#302b25}
+.hero__description{font-size:.98rem;line-height:1.78;max-width:52ch;color:#5a5853;margin-top:18px}
+.hero__actions{display:flex;gap:11px;margin-top:31px;flex-wrap:wrap}
+.hero__actions .button{font-size:.8rem;padding:13px 17px;min-height:50px}
+.hero__actions .button span{margin-left:14px;font-size:1rem}
+.hero__undertext{display:flex;flex-wrap:wrap;gap:8px 21px;margin-top:54px;padding-top:17px;border-top:1px solid rgba(21,23,26,.13);color:#78736b;text-transform:uppercase;font-size:.64rem;letter-spacing:.12em;font-weight:650}
+.hero__stage{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:0;overflow:hidden;padding:60px clamp(26px,3vw,54px) 39px;background:linear-gradient(126deg,#696257 0,#403c37 48%,#252626 100%)}
+.hero__stage:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 8% 3%,rgba(246,227,181,.19),transparent 58%),repeating-linear-gradient(90deg,rgba(255,255,255,.017) 0 1px,transparent 1px 30px)}
+.hero__stage:after{content:"";position:absolute;bottom:0;height:13%;left:0;right:0;pointer-events:none;background:linear-gradient(0deg,rgba(0,0,0,.25),transparent)}
+.hero__stage-top{position:relative;z-index:1;align-self:stretch;display:flex;justify-content:space-between;gap:15px;color:#e9dfc9;font-size:.61rem;font-weight:700;letter-spacing:.17em;line-height:1.35;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.24)}
+.hero__institutional-image{width:min(100%,505px);position:relative;z-index:1;margin:30px 0 0;}
+.hero__institutional-image img{width:100%;height:auto;aspect-ratio:1;object-fit:contain;box-shadow:0 18px 43px rgba(0,0,0,.28)}
+.hero__institutional-image figcaption{margin-top:17px;color:#ded8c9;text-align:right;letter-spacing:.045em;font-size:.70rem;line-height:1.5}
+.hero__stage img{filter:none!important;}
+.editorial-rail{background:#ece6dc;border-block:1px solid rgba(21,23,26,.16)}
+.editorial-rail__inner{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0}
+.editorial-rail p{display:flex;align-items:center;gap:15px;padding:22px 20px;font-size:.79rem;font-weight:650;line-height:1.45;letter-spacing:.025em;text-transform:uppercase;color:#383632;max-width:none}
+.editorial-rail p:first-child{padding-left:0}
+.editorial-rail p+ p{border-left:1px solid rgba(21,23,26,.13)}
+.editorial-rail span{color:#927145;font:italic 1.35rem/1 var(--font-editorial);letter-spacing:0}
+
+/* Texto institucional. */
+.section--intro{background:#f6f2ea}
+.intro-grid{grid-template-columns:minmax(0,1fr) minmax(0,.95fr);gap:clamp(40px,8vw,130px)}
+.intro-copy{padding-left:clamp(0px,3vw,35px);border-left:2px solid #b3935c}
+.intro-copy .eyebrow{padding-left:clamp(15px,1.6vw,24px)}
+.intro-copy h2{padding-left:clamp(15px,1.6vw,24px);max-width:15ch}
+.intro-grid .prose{max-width:58ch;font-size:1.01rem;line-height:1.82}
+.prose__opening{color:#292a29;font:500 clamp(1.28rem,2vw,1.65rem)/1.5 var(--font-editorial)}
+.prose__opening+p{margin-top:23px}
+.intro-grid .signature{padding-top:23px;border-top:1px solid var(--hairline);font-size:.79rem;margin-top:26px}
+
+/* Imagen editorial auténtica, sin alterar la lámina 09/14. */
+.institutional-section{background:#292a29;color:#f2eee6;overflow:hidden}
+.institutional-layout{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(45px,8vw,125px);align-items:center;padding-block:clamp(50px,7vw,95px)}
+.institutional-figure{max-width:550px;margin:0;padding:0}
+.institutional-figure img{display:block;width:100%;height:auto;object-fit:contain;box-shadow:0 20px 55px rgba(0,0,0,.3)}
+.institutional-figure figcaption{color:#c7c1b4;margin-top:17px;text-transform:uppercase;font-size:.65rem;letter-spacing:.12em}
+.institutional-copy{position:relative;padding-bottom:85px}
+.institutional-copy .eyebrow{color:#e2bd79}
+.institutional-copy h2{font:500 clamp(2.6rem,5.2vw,5.6rem)/1.08 var(--font-editorial);letter-spacing:-.04em;max-width:13ch;margin:28px 0 29px}
+.institutional-copy h2 em{color:#d6b779}
+.institutional-copy>p:not(.eyebrow){max-width:50ch;color:#e1ddd6;font-size:.99rem;line-height:1.85}
+.editorial-link{display:inline-block;margin-top:28px;padding-bottom:7px;text-decoration:none;border-bottom:1px solid #d6b779;color:#e9cd93;font-size:.9rem;font-weight:700}
+.editorial-link span{margin-left:16px;font-size:1.2rem}
+.institutional-folio{position:absolute;bottom:0;right:0;color:rgba(255,255,255,.12);font:500 clamp(2.4rem,6vw,6.7rem)/1 var(--font-editorial);letter-spacing:.07em}
+
+/* Archivos: no inventar imágenes ni simular artistas no publicados. */
+.section--artistas{background:#e9e4db}
+.section--library{background:#f7f4ee}
+.section--video{background:#1c1e1e}
+.artist-grid>.empty-state,.video-grid>.empty-state,.publication-grid>.empty-state{
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:17px;
+  min-height:210px;margin:0;padding:36px;text-align:center;font-size:clamp(1.12rem,1.7vw,1.55rem);
+  line-height:1.5;background:transparent;border:1px solid rgba(21,23,26,.16);
+}
+.artist-grid>.empty-state::before,.video-grid>.empty-state::before,.publication-grid>.empty-state::before{content:"ARCHIVO EN PREPARACIÓN";font:700 .65rem/1.5 var(--font-interface);letter-spacing:.2em;color:var(--gold-dark)}
+.video-grid>.empty-state{border-color:rgba(255,255,255,.21);color:#ddd9cf}
+.video-grid>.empty-state::before{color:#dfc78e}
+.artist-card__media img,.video-card__image img,.publication-card__cover img{object-fit:contain}
+.section--library .section-heading>p,.section--artistas .section-heading>p{max-width:38ch}
+.journal-layout{grid-template-columns:minmax(0,1.4fr) minmax(0,.6fr)}
+.journal-feature h2{max-width:16ch}
+.section--participate{background:#33322e}
+.participate-grid{gap:clamp(40px,7vw,110px)}
+.participate-note{max-width:450px}
+.footer-grid{grid-template-columns:1.1fr 1fr .85fr}
+
+/* Ajustes proporcionados para pantallas y navegación táctil. */
+@media(max-width:1150px){
+ .hero__layout{grid-template-columns:1.03fr .97fr;min-height:590px}
+ .hero h1{font-size:clamp(3rem,5.1vw,4.5rem)}
+ .hero__copy{padding-block:52px 40px}
+ .hero__stage{padding-inline:30px}
+ .hero__undertext{margin-top:36px}
+ .site-nav ul{gap:14px}
+ .site-nav a{font-size:.78rem}
+}
+@media(max-width:900px){
+ .site-header__inner{min-height:86px}
+ .site-brand img{width:90px;height:70px}
+ .hero__layout{grid-template-columns:1fr 1fr;min-height:unset}
+ .hero__copy{padding:45px 24px 45px 0}
+ .hero h1{font-size:clamp(2.65rem,5vw,3.65rem)}
+ .hero__stage{padding:42px 24px}
+ .hero__undertext{margin-top:25px}
+ .editorial-rail p{padding:15px 10px;font-size:.7rem;gap:8px}
+ .editorial-rail span{font-size:1.15rem}
+ .institutional-layout{gap:35px}
+ .institutional-copy h2{font-size:clamp(2.2rem,4.7vw,4.3rem)}
+}
+@media(max-width:760px){
+ .site-header__inner{min-height:78px}
+ .site-brand img{width:89px;height:67px}
+ .site-nav a{font-size:1rem}
+ .hero__layout{grid-template-columns:minmax(0,1fr)}
+ .hero__copy{padding:60px 0 40px}
+ .hero h1{font-size:clamp(2.85rem,9.1vw,4.85rem);max-width:16ch;margin-top:20px}
+ .hero__lead{margin-top:24px}
+ .hero__description{font-size:.97rem;max-width:56ch}
+ .hero__undertext{margin-top:35px}
+ .hero__stage{margin-inline:calc(-1 * var(--page-gutter));min-height:0;padding:24px var(--page-gutter) 30px}
+ .hero__stage-top{padding-bottom:14px}
+ .hero__institutional-image{max-width:520px;margin-top:18px}
+ .editorial-rail__inner{grid-template-columns:1fr}
+ .editorial-rail p{padding:13px 0;min-height:52px;font-size:.77rem}
+ .editorial-rail p+p{border-left:0;border-top:1px solid rgba(21,23,26,.12)}
+ .intro-grid,.institutional-layout{grid-template-columns:minmax(0,1fr)}
+ .intro-copy{padding-left:0}
+ .intro-copy h2{max-width:18ch}
+ .institutional-layout{padding-block:50px}
+ .institutional-figure{max-width:540px;margin-inline:auto}
+ .institutional-copy{padding-bottom:50px}
+ .institutional-copy h2{font-size:clamp(2.6rem,8vw,4.6rem);max-width:15ch;margin-top:18px}
+ .institutional-folio{font-size:3rem}
+}
+@media(max-width:480px){
+ .hero__copy{padding-top:43px}
+ .hero h1{font-size:clamp(2.75rem,10.4vw,3.9rem);letter-spacing:-.045em}
+ .hero__undertext{font-size:.6rem}
+ .hero__actions{flex-direction:column;align-items:stretch}
+ .hero__actions .button{width:100%}
+ .hero__stage{padding-block:20px 27px}
+ .hero__stage-top{font-size:.56rem}
+ .hero__institutional-image figcaption{font-size:.66rem}
+ .editorial-rail p{font-size:.71rem}
+ .institutional-copy h2{font-size:2.9rem}
+ .artist-grid>.empty-state,.video-grid>.empty-state,.publication-grid>.empty-state{padding:27px 18px;min-height:185px}
+}
+@media(prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+@media print{.institutional-section{background:#fff;color:#000}.hero__stage{display:none}.editorial-rail{display:none}}
+/* Corrección final V2: el pie pasa a una columna antes de 760 px. */
+@media (max-width: 900px) and (min-width: 761px) {
+  .footer-grid {grid-template-columns: repeat(2, minmax(0, 1fr));}
+}
+@media (max-width: 760px) {
+  .footer-grid {grid-template-columns: minmax(0,1fr);gap:26px;}
+}
+@media (max-width: 760px) { html, body {overflow-x: clip;} }
