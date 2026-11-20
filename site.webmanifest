@@ -1,0 +1,18 @@
+{
+  "name": "UnoKda_3_Días | Arte, Encuentro, Territorio",
+  "short_name": "UnoKda_3_Días",
+  "lang": "es",
+  "start_url": "./",
+  "scope": "./",
+  "display": "browser",
+  "background_color": "#F3EFE6",
+  "theme_color": "#15171A",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

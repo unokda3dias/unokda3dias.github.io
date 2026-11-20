@@ -1,0 +1,6 @@
+# UnoKda_3_Días — fichero público de rastreo.
+# robots.txt NO protege archivos privados: no subir documentación confidencial.
+User-agent: *
+Allow: /
+
+Sitemap: https://unokda3dias.github.io/sitemap.xml
