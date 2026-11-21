@@ -11,15 +11,196 @@
   'use strict';
 
   const DATA = Object.freeze({
-    artistas: './data/artistas.json',
-    videos: './data/videos.json',
-    publicaciones: './data/publicaciones.json'
+    artistas: '/data/artistas.json',
+    videos: '/data/videos.json',
+    publicaciones: '/data/publicaciones.json'
   });
+  const SITE_BASE = location.protocol === 'file:' ? SITE_BASE : new URL('/', location.origin);
+  const LOCALE = document.documentElement.lang || 'es';
+
+  const UI = {
+  "en": {
+    "Abrir menú de navegación": "Open navigation",
+    "Cerrar menú de navegación": "Close navigation",
+    "Consultar la ficha de": "View the profile of",
+    "El archivo digital se está preparando para su publicación.": "The digital archive is being prepared for publication.",
+    "El catálogo de artistas no está disponible en este momento.": "The artists archive is currently unavailable.",
+    "Fotograma de presentación:": "Video preview:",
+    "Reproducir vídeo:": "Play video:",
+    "No hay vídeos publicados en esta categoría.": "No published videos in this category.",
+    "Todavía no hay vídeos publicados en esta sección.": "No videos have been published in this section yet.",
+    "La videoteca no está disponible en este momento.": "The video archive is currently unavailable.",
+    "Vídeo de YouTube:": "YouTube video:",
+    "Portada de": "Cover of",
+    "Publicación digital": "Digital publication",
+    "Leer publicación:": "Read publication:",
+    "Las publicaciones digitales estarán disponibles aquí tras su revisión editorial.": "Digital publications will be available here after editorial review.",
+    "La biblioteca no está disponible en este momento.": "The library is currently unavailable.",
+    "Página": "Page",
+    "de": "of",
+    "Página 0 de 0": "Page 0 of 0",
+    "Preparando las páginas de lectura…": "Preparing the pages…",
+    "Arrastra una esquina o utiliza Anterior y Siguiente. Las páginas conservan su imagen original.": "Drag a corner or use Previous and Next. Pages retain their original artwork.",
+    "No ha sido posible abrir el libro. Comprueba la conexión y las rutas de sus imágenes.": "Unable to open the publication. Check the connection and image paths.",
+    "Visor con paso de hojas": "Page-turning reader",
+    "Este navegador no admite pantalla completa.": "This browser does not support full screen.",
+    "No se pudo activar la pantalla completa.": "Unable to activate full screen.",
+    "Salir de pantalla completa": "Exit full screen",
+    "Pantalla completa": "Full screen",
+    "Para leer los archivos JSON abre esta web mediante un servidor local o desde su alojamiento HTTPS, no con doble clic en index.html.": "To load JSON catalogues, access this site through a local web server or HTTPS hosting, not by double-clicking index.html.",
+    "entrevistas": "Interviews",
+    "procesos": "Processes",
+    "videoarte": "Video art",
+    "exposiciones": "Exhibitions"
+  },
+  "fr": {
+    "Abrir menú de navegación": "Ouvrir le menu",
+    "Cerrar menú de navegación": "Fermer le menu",
+    "Consultar la ficha de": "Voir la fiche de",
+    "El archivo digital se está preparando para su publicación.": "Les archives numériques sont en cours de préparation.",
+    "El catálogo de artistas no está disponible en este momento.": "Les archives des artistes sont indisponibles pour le moment.",
+    "Fotograma de presentación:": "Aperçu de la vidéo :",
+    "Reproducir vídeo:": "Lire la vidéo :",
+    "No hay vídeos publicados en esta categoría.": "Aucune vidéo publiée dans cette catégorie.",
+    "Todavía no hay vídeos publicados en esta sección.": "Aucune vidéo n’a encore été publiée dans cette rubrique.",
+    "La videoteca no está disponible en este momento.": "La vidéothèque est indisponible pour le moment.",
+    "Vídeo de YouTube:": "Vidéo YouTube :",
+    "Portada de": "Couverture de",
+    "Publicación digital": "Publication numérique",
+    "Leer publicación:": "Lire la publication :",
+    "Las publicaciones digitales estarán disponibles aquí tras su revisión editorial.": "Les publications numériques seront disponibles ici après validation éditoriale.",
+    "La biblioteca no está disponible en este momento.": "La bibliothèque est indisponible pour le moment.",
+    "Página": "Page",
+    "de": "sur",
+    "Página 0 de 0": "Page 0 sur 0",
+    "Preparando las páginas de lectura…": "Préparation des pages…",
+    "Arrastra una esquina o utiliza Anterior y Siguiente. Las páginas conservan su imagen original.": "Faites glisser un coin ou utilisez Précédent et Suivant. Les pages conservent leur image originale.",
+    "No ha sido posible abrir el libro. Comprueba la conexión y las rutas de sus imágenes.": "Impossible d’ouvrir la publication. Vérifiez la connexion et les chemins des images.",
+    "Visor con paso de hojas": "Visionneuse à pages tournantes",
+    "Este navegador no admite pantalla completa.": "Ce navigateur ne prend pas en charge le plein écran.",
+    "No se pudo activar la pantalla completa.": "Impossible d’activer le plein écran.",
+    "Salir de pantalla completa": "Quitter le plein écran",
+    "Pantalla completa": "Plein écran",
+    "Para leer los archivos JSON abre esta web mediante un servidor local o desde su alojamiento HTTPS, no con doble clic en index.html.": "Pour charger les catalogues JSON, ouvrez ce site depuis un serveur local ou un hébergement HTTPS, et non par double-clic sur index.html.",
+    "entrevistas": "Entretiens",
+    "procesos": "Processus",
+    "videoarte": "Art vidéo",
+    "exposiciones": "Expositions"
+  },
+  "pt": {
+    "Abrir menú de navegación": "Abrir navegação",
+    "Cerrar menú de navegación": "Fechar navegação",
+    "Consultar la ficha de": "Consultar a ficha de",
+    "El archivo digital se está preparando para su publicación.": "O arquivo digital está em preparação.",
+    "El catálogo de artistas no está disponible en este momento.": "O arquivo de artistas está temporariamente indisponível.",
+    "Fotograma de presentación:": "Imagem de apresentação:",
+    "Reproducir vídeo:": "Reproduzir vídeo:",
+    "No hay vídeos publicados en esta categoría.": "Não há vídeos publicados nesta categoria.",
+    "Todavía no hay vídeos publicados en esta sección.": "Ainda não há vídeos publicados nesta secção.",
+    "La videoteca no está disponible en este momento.": "A videoteca está temporariamente indisponível.",
+    "Vídeo de YouTube:": "Vídeo do YouTube:",
+    "Portada de": "Capa de",
+    "Publicación digital": "Publicação digital",
+    "Leer publicación:": "Ler publicação:",
+    "Las publicaciones digitales estarán disponibles aquí tras su revisión editorial.": "As publicações digitais estarão disponíveis aqui após revisão editorial.",
+    "La biblioteca no está disponible en este momento.": "A biblioteca está temporariamente indisponível.",
+    "Página": "Página",
+    "de": "de",
+    "Página 0 de 0": "Página 0 de 0",
+    "Preparando las páginas de lectura…": "A preparar as páginas…",
+    "Arrastra una esquina o utiliza Anterior y Siguiente. Las páginas conservan su imagen original.": "Arrasta um canto ou usa Anterior e Seguinte. As páginas mantêm a imagem original.",
+    "No ha sido posible abrir el libro. Comprueba la conexión y las rutas de sus imágenes.": "Não foi possível abrir a publicação. Verifica a ligação e os caminhos das imagens.",
+    "Visor con paso de hojas": "Leitor de páginas",
+    "Este navegador no admite pantalla completa.": "Este navegador não suporta ecrã inteiro.",
+    "No se pudo activar la pantalla completa.": "Não foi possível ativar o ecrã inteiro.",
+    "Salir de pantalla completa": "Sair de ecrã inteiro",
+    "Pantalla completa": "Ecrã inteiro",
+    "Para leer los archivos JSON abre esta web mediante un servidor local o desde su alojamiento HTTPS, no con doble clic en index.html.": "Para carregar os catálogos JSON, abre o site num servidor local ou em HTTPS, não clicando duas vezes em index.html.",
+    "entrevistas": "Entrevistas",
+    "procesos": "Processos",
+    "videoarte": "Videoarte",
+    "exposiciones": "Exposições"
+  },
+  "it": {
+    "Abrir menú de navegación": "Apri menu",
+    "Cerrar menú de navegación": "Chiudi menu",
+    "Consultar la ficha de": "Consulta la scheda di",
+    "El archivo digital se está preparando para su publicación.": "L’archivio digitale è in preparazione.",
+    "El catálogo de artistas no está disponible en este momento.": "L’archivio degli artisti non è disponibile al momento.",
+    "Fotograma de presentación:": "Anteprima del video:",
+    "Reproducir vídeo:": "Riproduci video:",
+    "No hay vídeos publicados en esta categoría.": "Nessun video pubblicato in questa categoria.",
+    "Todavía no hay vídeos publicados en esta sección.": "Non sono ancora stati pubblicati video in questa sezione.",
+    "La videoteca no está disponible en este momento.": "La videoteca non è disponibile al momento.",
+    "Vídeo de YouTube:": "Video YouTube:",
+    "Portada de": "Copertina di",
+    "Publicación digital": "Pubblicazione digitale",
+    "Leer publicación:": "Leggi la pubblicazione:",
+    "Las publicaciones digitales estarán disponibles aquí tras su revisión editorial.": "Le pubblicazioni digitali saranno disponibili qui dopo la revisione editoriale.",
+    "La biblioteca no está disponible en este momento.": "La biblioteca non è disponibile al momento.",
+    "Página": "Pagina",
+    "de": "di",
+    "Página 0 de 0": "Pagina 0 di 0",
+    "Preparando las páginas de lectura…": "Preparazione delle pagine…",
+    "Arrastra una esquina o utiliza Anterior y Siguiente. Las páginas conservan su imagen original.": "Trascina un angolo oppure usa Precedente e Successivo. Le pagine mantengono l’immagine originale.",
+    "No ha sido posible abrir el libro. Comprueba la conexión y las rutas de sus imágenes.": "Impossibile aprire la pubblicazione. Controlla la connessione e i percorsi delle immagini.",
+    "Visor con paso de hojas": "Lettore sfogliabile",
+    "Este navegador no admite pantalla completa.": "Questo browser non supporta lo schermo intero.",
+    "No se pudo activar la pantalla completa.": "Impossibile attivare lo schermo intero.",
+    "Salir de pantalla completa": "Esci dallo schermo intero",
+    "Pantalla completa": "Schermo intero",
+    "Para leer los archivos JSON abre esta web mediante un servidor local o desde su alojamiento HTTPS, no con doble clic en index.html.": "Per caricare i cataloghi JSON apri il sito tramite un server locale o HTTPS, non con un doppio clic su index.html.",
+    "entrevistas": "Interviste",
+    "procesos": "Processi",
+    "videoarte": "Videoarte",
+    "exposiciones": "Mostre"
+  },
+  "de": {
+    "Abrir menú de navegación": "Navigation öffnen",
+    "Cerrar menú de navegación": "Navigation schließen",
+    "Consultar la ficha de": "Profil ansehen:",
+    "El archivo digital se está preparando para su publicación.": "Das digitale Archiv wird vorbereitet.",
+    "El catálogo de artistas no está disponible en este momento.": "Das Künstlerarchiv ist derzeit nicht verfügbar.",
+    "Fotograma de presentación:": "Videovorschau:",
+    "Reproducir vídeo:": "Video abspielen:",
+    "No hay vídeos publicados en esta categoría.": "Keine veröffentlichten Videos in dieser Kategorie.",
+    "Todavía no hay vídeos publicados en esta sección.": "In diesem Bereich wurden noch keine Videos veröffentlicht.",
+    "La videoteca no está disponible en este momento.": "Die Videothek ist derzeit nicht verfügbar.",
+    "Vídeo de YouTube:": "YouTube-Video:",
+    "Portada de": "Titelseite von",
+    "Publicación digital": "Digitale Publikation",
+    "Leer publicación:": "Publikation lesen:",
+    "Las publicaciones digitales estarán disponibles aquí tras su revisión editorial.": "Digitale Publikationen werden hier nach redaktioneller Prüfung veröffentlicht.",
+    "La biblioteca no está disponible en este momento.": "Die Bibliothek ist derzeit nicht verfügbar.",
+    "Página": "Seite",
+    "de": "von",
+    "Página 0 de 0": "Seite 0 von 0",
+    "Preparando las páginas de lectura…": "Seiten werden vorbereitet…",
+    "Arrastra una esquina o utiliza Anterior y Siguiente. Las páginas conservan su imagen original.": "Ziehe an einer Ecke oder nutze Zurück und Weiter. Die Seiten behalten ihr Originalbild.",
+    "No ha sido posible abrir el libro. Comprueba la conexión y las rutas de sus imágenes.": "Die Publikation konnte nicht geöffnet werden. Bitte Verbindung und Bildpfade prüfen.",
+    "Visor con paso de hojas": "Blätteransicht",
+    "Este navegador no admite pantalla completa.": "Dieser Browser unterstützt keinen Vollbildmodus.",
+    "No se pudo activar la pantalla completa.": "Vollbild konnte nicht aktiviert werden.",
+    "Salir de pantalla completa": "Vollbild verlassen",
+    "Pantalla completa": "Vollbild",
+    "Para leer los archivos JSON abre esta web mediante un servidor local o desde su alojamiento HTTPS, no con doble clic en index.html.": "Zum Laden der JSON-Kataloge öffne die Website über einen lokalen Server oder HTTPS, nicht per Doppelklick auf index.html.",
+    "entrevistas": "Interviews",
+    "procesos": "Prozesse",
+    "videoarte": "Videokunst",
+    "exposiciones": "Ausstellungen"
+  }
+};
+  const tx = key => UI[LOCALE]?.[key] || key;
+
   const VIDEO_CATEGORIES = new Set(['entrevistas', 'procesos', 'videoarte', 'exposiciones']);
   const YOUTUBE_ID = /^[a-zA-Z0-9_-]{11}$/;
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
   const texto = value => typeof value === 'string' ? value.trim() : '';
+  const localizado = (item, campo) => {
+    const alterno = item?.[campo + '_i18n'];
+    return texto((alterno && alterno[LOCALE]) || item?.[campo]);
+  }; 
   const publicado = item => item && item.aprobado === true && item.publicado === true;
   const records = { videos: [], publicaciones: [] };
   const libraryURL = $('#flipbook')?.dataset.librarySrc ||
@@ -37,8 +218,8 @@
     const source = texto(value);
     if (!source || source.startsWith('//') || /[?#]/.test(source)) return null;
     try {
-      const url = new URL(source, document.baseURI);
-      const assets = new URL('./assets/', document.baseURI);
+      const url = new URL(source, SITE_BASE);
+      const assets = new URL('/assets/', SITE_BASE);
       return url.origin === location.origin &&
         url.pathname.startsWith(assets.pathname) &&
         /\.(?:avif|webp|png|jpe?g)$/i.test(url.pathname) ? url.href : null;
@@ -52,8 +233,8 @@
     const source = texto(value);
     if (!source || source.startsWith('//') || /[?#]/.test(source)) return null;
     try {
-      const url = new URL(source, document.baseURI);
-      const root = new URL('./', document.baseURI);
+      const url = new URL(source, SITE_BASE);
+      const root = SITE_BASE;
       return url.origin === location.origin &&
         url.pathname.startsWith(root.pathname) &&
         /\.html$/i.test(url.pathname) ? url.href : null;
@@ -89,7 +270,7 @@
 
     const setOpen = open => {
       trigger.setAttribute('aria-expanded', String(open));
-      trigger.setAttribute('aria-label', open ? 'Cerrar menú de navegación' : 'Abrir menú de navegación');
+      trigger.setAttribute('aria-label', open ? tx('Cerrar menú de navegación') : tx('Abrir menú de navegación'));
     };
     trigger.addEventListener('click', () =>
       setOpen(trigger.getAttribute('aria-expanded') !== 'true'));
@@ -119,8 +300,8 @@
 
     for (const item of items) {
       const name = texto(item.nombre);
-      const description = texto(item.descripcion);
-      const alt = texto(item.alt);
+      const description = localizado(item, 'descripcion');
+      const alt = localizado(item,'alt');
       const img = imagePath(item.imagen);
       if (!name || !alt || !img) continue;
 
@@ -129,7 +310,7 @@
       const surface = element(page ? 'a' : 'div', 'artist-card__link');
       if (page) {
         surface.href = page;
-        surface.setAttribute('aria-label', `Consultar la ficha de ${name}`);
+        surface.setAttribute('aria-label', `${tx("Consultar la ficha de")} ${name}`);
       }
       const media = element('span', 'artist-card__media');
       const image = element('img');
@@ -141,7 +322,7 @@
       image.decoding = 'async';
       media.append(image);
       surface.append(media);
-      if (texto(item.disciplina)) surface.append(element('p', 'artist-card__meta', texto(item.disciplina)));
+      if (texto(item.disciplina)) surface.append(element('p', 'artist-card__meta', localizado(item,'disciplina')));
       surface.append(element('h3', 'artist-card__title', name));
       if (description) surface.append(element('p', 'artist-card__description', description));
       article.append(surface);
@@ -149,7 +330,7 @@
     }
     container.replaceChildren(fragment);
     if (!container.childElementCount) {
-      emptyMessage(container, 'El archivo digital se está preparando para su publicación.');
+      emptyMessage(container, tx('El archivo digital se está preparando para su publicación.'));
     }
   }
 
@@ -158,7 +339,7 @@
       renderArtists(await readPublicData(DATA.artistas));
     } catch (error) {
       console.warn('UnoKda / artistas:', error);
-      emptyMessage($('#artist-grid'), 'El catálogo de artistas no está disponible en este momento.');
+      emptyMessage($('#artist-grid'), tx('El catálogo de artistas no está disponible en este momento.'));
     }
   }
 
@@ -182,18 +363,18 @@
       const button = $('.video-card__play', card);
       const image = $('img', card);
       image.src = imagePath(video.miniatura);
-      image.alt = `Fotograma de presentación: ${video.titulo}`;
-      $('.video-card__category', card).textContent = video.categoria;
-      $('.video-card__title', card).textContent = video.titulo;
-      button.setAttribute('aria-label', `Reproducir vídeo: ${video.titulo}`);
+      image.alt = `${tx("Fotograma de presentación:")} ${localizado(video,"titulo")}`;
+      $('.video-card__category', card).textContent = tx(video.categoria);
+      $('.video-card__title', card).textContent = localizado(video,'titulo');
+      button.setAttribute('aria-label', `${tx("Reproducir vídeo:")} ${localizado(video,"titulo")}`);
       button.addEventListener('click', () => openVideo(video));
       fragment.append(card);
     }
     container.replaceChildren(fragment);
     if (!selection.length) {
       const message = records.videos.length
-        ? 'No hay vídeos publicados en esta categoría.'
-        : 'Todavía no hay vídeos publicados en esta sección.';
+        ? tx('No hay vídeos publicados en esta categoría.')
+        : tx('Todavía no hay vídeos publicados en esta sección.');
       emptyMessage(container, message);
     }
   }
@@ -220,7 +401,7 @@
       renderVideos();
     } catch (error) {
       console.warn('UnoKda / videoteca:', error);
-      emptyMessage($('#video-grid'), 'La videoteca no está disponible en este momento.');
+      emptyMessage($('#video-grid'), tx('La videoteca no está disponible en este momento.'));
     }
   }
 
@@ -228,12 +409,12 @@
     const dialog = $('#video-dialog');
     const player = $('#video-player');
     if (!dialog || !player || !YOUTUBE_ID.test(video.youtubeId)) return;
-    $('#video-dialog-title').textContent = video.titulo;
-    $('#video-description').textContent = texto(video.descripcion);
+    $('#video-dialog-title').textContent = localizado(video,'titulo');
+    $('#video-description').textContent = localizado(video,'descripcion');
     player.replaceChildren();
 
     const iframe = document.createElement('iframe');
-    iframe.title = `Vídeo de YouTube: ${video.titulo}`;
+    iframe.title = `${tx("Vídeo de YouTube:")} ${localizado(video,"titulo")}`;
     iframe.src = `https://www.youtube-nocookie.com/embed/${video.youtubeId}?autoplay=1&rel=0`;
     iframe.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
     iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
@@ -274,17 +455,17 @@
       const button = $('.publication-card__open', card);
       const cover = $('img', card);
       cover.src = imagePath(publication.portada);
-      cover.alt = texto(publication.altPortada) || `Portada de ${publication.titulo}`;
-      $('.publication-card__type', card).textContent = texto(publication.tipo) || 'Publicación digital';
-      $('.publication-card__title', card).textContent = publication.titulo;
+      cover.alt = localizado(publication,'altPortada') || `${tx("Portada de")} ${localizado(publication,"titulo")}`;
+      $('.publication-card__type', card).textContent = localizado(publication,'tipo') || tx('Publicación digital');
+      $('.publication-card__title', card).textContent = localizado(publication,'titulo');
       $('.publication-card__author', card).textContent = publication.autor;
-      button.setAttribute('aria-label', `Leer publicación: ${publication.titulo}`);
+      button.setAttribute('aria-label', `${tx("Leer publicación:")} ${localizado(publication,"titulo")}`);
       button.addEventListener('click', () => openBook(publication));
       fragment.append(card);
     }
     container.replaceChildren(fragment);
     if (!items.length) {
-      emptyMessage(container, 'Las publicaciones digitales estarán disponibles aquí tras su revisión editorial.');
+      emptyMessage(container, tx('Las publicaciones digitales estarán disponibles aquí tras su revisión editorial.'));
     }
   }
 
@@ -294,7 +475,7 @@
       renderPublications(records.publicaciones);
     } catch (error) {
       console.warn('UnoKda / biblioteca:', error);
-      emptyMessage($('#publication-grid'), 'La biblioteca no está disponible en este momento.');
+      emptyMessage($('#publication-grid'), tx('La biblioteca no está disponible en este momento.'));
     }
   }
 
@@ -329,7 +510,7 @@
   function updateBookPage() {
     const total = pageFlip?.getPageCount() || 0;
     const current = total ? pageFlip.getCurrentPageIndex() + 1 : 0;
-    $('#book-counter').textContent = `Página ${current} de ${total}`;
+    $('#book-counter').textContent = `${tx("Página")} ${current} ${tx("de")} ${total}`;
     $('#book-prev').disabled = current <= 1;
     $('#book-next').disabled = current >= total;
   }
@@ -360,12 +541,12 @@
     // StPageFlip puede eliminar su elemento raíz al destruirse: se recrea siempre.
     const host = element('div', 'flipbook');
     host.id = 'flipbook';
-    host.setAttribute('aria-label', 'Visor con paso de hojas');
+    host.setAttribute('aria-label', tx('Visor con paso de hojas'));
     host.dataset.librarySrc = libraryURL;
     $('#reader-frame')?.replaceChildren(host);
     bookZoom(100);
     bookButtons(false);
-    $('#book-counter').textContent = 'Página 0 de 0';
+    $('#book-counter').textContent = tx('Página 0 de 0');
     $('#book-status').textContent = '';
   }
 
@@ -374,8 +555,8 @@
     if (!dialog) return;
     disposeBook();
     const version = bookRequestVersion;
-    $('#book-dialog-title').textContent = publication.titulo;
-    $('#book-status').textContent = 'Preparando las páginas de lectura…';
+    $('#book-dialog-title').textContent = localizado(publication,'titulo');
+    $('#book-status').textContent = tx('Preparando las páginas de lectura…');
     if (!dialog.open) dialog.showModal();
 
     try {
@@ -406,10 +587,10 @@
       pageFlip.loadFromImages(publication.paginas.map(imagePath));
       bookButtons(true);
       updateBookPage();
-      $('#book-status').textContent = 'Arrastra una esquina o utiliza Anterior y Siguiente. Las páginas conservan su imagen original.';
+      $('#book-status').textContent = tx('Arrastra una esquina o utiliza Anterior y Siguiente. Las páginas conservan su imagen original.');
     } catch (error) {
       console.error('UnoKda / lector:', error);
-      $('#book-status').textContent = 'No ha sido posible abrir el libro. Comprueba la conexión y las rutas de sus imágenes.';
+      $('#book-status').textContent = tx('No ha sido posible abrir el libro. Comprueba la conexión y las rutas de sus imágenes.');
       bookButtons(false);
     }
   }
@@ -428,15 +609,15 @@
         } else if (dialog.requestFullscreen) {
           await dialog.requestFullscreen();
         } else {
-          $('#book-status').textContent = 'Este navegador no admite pantalla completa.';
+          $('#book-status').textContent = tx('Este navegador no admite pantalla completa.');
         }
       } catch {
-        $('#book-status').textContent = 'No se pudo activar la pantalla completa.';
+        $('#book-status').textContent = tx('No se pudo activar la pantalla completa.');
       }
     });
     document.addEventListener('fullscreenchange', () => {
       $('#book-fullscreen').textContent = document.fullscreenElement === dialog
-        ? 'Salir de pantalla completa' : 'Pantalla completa';
+        ? tx('Salir de pantalla completa') : tx('Pantalla completa');
       pageFlip?.update?.();
     });
   }
@@ -447,10 +628,7 @@
     setupVideoDialog();
     setupBookDialog();
     if (location.protocol === 'file:') {
-      const warning = 'Para leer los archivos JSON abre esta web mediante un servidor local o desde su alojamiento HTTPS, no con doble clic en index.html.';
-      emptyMessage($('#artist-grid'), warning);
-      emptyMessage($('#video-grid'), warning);
-      emptyMessage($('#publication-grid'), warning);
+      // Vista previa local: conservar los mensajes informativos ya presentes en HTML.
       return;
     }
     loadArtists();

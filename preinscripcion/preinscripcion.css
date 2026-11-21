@@ -63,3 +63,8 @@
 .apply-form-area{background:#ddd5c7}
 .apply-form-card{box-shadow:0 15px 40px rgba(40,30,15,.08)}
 @media(max-width:760px){.apply-hero__grid{grid-template-columns:1fr}.apply-hero__body{padding:55px 0 50px}.apply-hero h1{font-size:clamp(2.7rem,9vw,4.3rem)}.apply-hero__panel{min-height:340px}}
+
+/* V3 · Idiomas en la página de preinscripción. */
+.apply-nav {margin-left:auto;}
+.application-page .language-switcher {margin-left:14px;}
+@media(max-width:740px){.application-page .site-header__inner{display:flex;flex-wrap:wrap;align-items:center}.application-page .language-switcher{margin-left:auto;order:2}.application-page .apply-nav{order:3;flex-basis:100%;margin:0;justify-content:flex-start;gap:12px;padding-bottom:12px;display:flex;flex-wrap:wrap}.application-page .apply-nav a{font-size:.85rem;}}

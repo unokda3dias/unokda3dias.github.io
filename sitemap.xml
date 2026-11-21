@@ -1,7 +1,63 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Agregar solo URLs públicas reales, indexables y canónicas. -->
+<?xml version='1.0' encoding='utf-8'?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://unokda3dias.github.io/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unokda3dias.github.io/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://unokda3dias.github.io/en/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unokda3dias.github.io/fr/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unokda3dias.github.io/pt/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://unokda3dias.github.io/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://unokda3dias.github.io/de/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unokda3dias.github.io/" />
+  </url>
+  <url>
+    <loc>https://unokda3dias.github.io/en/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unokda3dias.github.io/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://unokda3dias.github.io/en/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unokda3dias.github.io/fr/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unokda3dias.github.io/pt/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://unokda3dias.github.io/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://unokda3dias.github.io/de/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unokda3dias.github.io/" />
+  </url>
+  <url>
+    <loc>https://unokda3dias.github.io/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unokda3dias.github.io/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://unokda3dias.github.io/en/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unokda3dias.github.io/fr/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unokda3dias.github.io/pt/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://unokda3dias.github.io/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://unokda3dias.github.io/de/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unokda3dias.github.io/" />
+  </url>
+  <url>
+    <loc>https://unokda3dias.github.io/pt/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unokda3dias.github.io/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://unokda3dias.github.io/en/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unokda3dias.github.io/fr/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unokda3dias.github.io/pt/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://unokda3dias.github.io/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://unokda3dias.github.io/de/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unokda3dias.github.io/" />
+  </url>
+  <url>
+    <loc>https://unokda3dias.github.io/it/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unokda3dias.github.io/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://unokda3dias.github.io/en/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unokda3dias.github.io/fr/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unokda3dias.github.io/pt/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://unokda3dias.github.io/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://unokda3dias.github.io/de/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unokda3dias.github.io/" />
+  </url>
+  <url>
+    <loc>https://unokda3dias.github.io/de/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unokda3dias.github.io/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://unokda3dias.github.io/en/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unokda3dias.github.io/fr/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unokda3dias.github.io/pt/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://unokda3dias.github.io/it/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://unokda3dias.github.io/de/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unokda3dias.github.io/" />
   </url>
 </urlset>

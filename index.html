@@ -1,360 +1,345 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#15171A">
-  <meta name="author" content="Jorge Boullosa Trejo · BULHOSART">
-  <meta name="color-scheme" content="light">
-  <meta name="robots" content="index,follow,max-image-preview:large">
-
-  <!-- SEO: URL pública de la organización UnoKda_3_Días en GitHub Pages. -->
-  <title>UnoKda_3_Días | Arte contemporáneo y curaduría digital</title>
-  <meta name="description" content="UnoKda_3_Días: proyecto independiente de difusión de artistas contemporáneos, curaduría digital, publicaciones de arte y encuentros con nuevas miradas.">
-  <link rel="canonical" href="https://unokda3dias.github.io/">
-  <!-- Iconos: derivados por escala proporcional del logotipo oficial, sin redibujarlo. -->
-  <link rel="icon" href="./favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
-  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
-  <link rel="manifest" href="./site.webmanifest">
-
-  <!-- Imagen social: adaptación proporcional del logotipo oficial; no se altera el original. -->
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="es_ES">
-  <meta property="og:site_name" content="UnoKda_3_Días">
-  <meta property="og:title" content="UnoKda_3_Días | Arte contemporáneo y curaduría digital">
-  <meta property="og:description" content="Una plataforma editorial para conocer artistas, obras, procesos y publicaciones de arte contemporáneo.">
-  <meta property="og:url" content="https://unokda3dias.github.io/">
-  <meta property="og:image" content="https://unokda3dias.github.io/assets/identidad/logo-oficial-640.png">
-  <meta property="og:image:alt" content="Logotipo original de UnoKda_3_Días: Arte, Encuentro, Territorio">
-  <meta property="og:image:type" content="image/png">
-  <meta property="og:image:width" content="640">
-  <meta property="og:image:height" content="640">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="UnoKda_3_Días | Arte contemporáneo y curaduría digital">
-  <meta name="twitter:description" content="Artistas, curaduría digital, videoteca y publicaciones artísticas.">
-  <meta name="twitter:image" content="https://unokda3dias.github.io/assets/identidad/logo-oficial-640.png">
-
-  <!-- No publicar VideoObject ni Book hasta disponer de fichas visibles con datos reales. -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": "https://unokda3dias.github.io/#website",
-        "name": "UnoKda_3_Días",
-        "url": "https://unokda3dias.github.io/",
-        "inLanguage": "es",
-        "description": "Proyecto independiente de divulgación y mediación artística digital.",
-        "publisher": { "@id": "https://unokda3dias.github.io/#proyecto" }
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://unokda3dias.github.io/#webpage",
-        "url": "https://unokda3dias.github.io/",
-        "name": "UnoKda_3_Días | Arte contemporáneo y curaduría digital",
-        "isPartOf": { "@id": "https://unokda3dias.github.io/#website" },
-        "about": { "@id": "https://unokda3dias.github.io/#proyecto" },
-        "inLanguage": "es"
-      },
-      {
-        "@type": "Organization",
-        "@id": "https://unokda3dias.github.io/#proyecto",
-        "name": "UnoKda_3_Días",
-        "description": "Iniciativa independiente de difusión y mediación cultural; no es una galería de representación comercial.",
-        "founder": { "@type": "Person", "name": "Jorge Boullosa Trejo" },
-        "logo": "https://unokda3dias.github.io/assets/identidad/logo-oficial-640.png",
-        "sameAs": ["https://www.instagram.com/_bulhosa_jorge.boullosa.trejo/"]
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#15171A" name="theme-color"/>
+<meta content="Jorge Boullosa Trejo · BULHOSART" name="author"/>
+<meta content="light" name="color-scheme"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<!-- SEO: URL pública de la organización UnoKda_3_Días en GitHub Pages. -->
+<title>UnoKda_3_Días | Arte contemporáneo y curaduría digital</title>
+<meta content="UnoKda_3_Días: proyecto independiente de difusión de artistas contemporáneos, curaduría digital, publicaciones de arte y encuentros con nuevas miradas." name="description"/>
+<link href="https://unokda3dias.github.io/" rel="canonical"/>
+<!-- Iconos: derivados por escala proporcional del logotipo oficial, sin redibujarlo. -->
+<link href="./favicon.ico" rel="icon" sizes="any"/>
+<link href="./favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="./apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="./site.webmanifest" rel="manifest"/>
+<!-- Imagen social: adaptación proporcional del logotipo oficial; no se altera el original. -->
+<meta content="website" property="og:type"/>
+<meta content="es_ES" property="og:locale"/>
+<meta content="UnoKda_3_Días" property="og:site_name"/>
+<meta content="UnoKda_3_Días | Arte contemporáneo y curaduría digital" property="og:title"/>
+<meta content="Una plataforma editorial para conocer artistas, obras, procesos y publicaciones de arte contemporáneo." property="og:description"/>
+<meta content="https://unokda3dias.github.io/" property="og:url"/>
+<meta content="https://unokda3dias.github.io/assets/identidad/logo-oficial-640.png" property="og:image"/>
+<meta content="Logotipo original de UnoKda_3_Días: Arte, Encuentro, Territorio" property="og:image:alt"/>
+<meta content="image/png" property="og:image:type"/>
+<meta content="640" property="og:image:width"/>
+<meta content="640" property="og:image:height"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="UnoKda_3_Días | Arte contemporáneo y curaduría digital" name="twitter:title"/>
+<meta content="Una plataforma editorial para conocer artistas, obras, procesos y publicaciones de arte contemporáneo." name="twitter:description"/>
+<meta content="https://unokda3dias.github.io/assets/identidad/logo-oficial-640.png" name="twitter:image"/>
+<!-- No publicar VideoObject ni Book hasta disponer de fichas visibles con datos reales. -->
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://unokda3dias.github.io/#website",
+      "name": "UnoKda_3_Días",
+      "url": "https://unokda3dias.github.io/",
+      "inLanguage": [
+        "es",
+        "en",
+        "fr",
+        "pt",
+        "it",
+        "de"
+      ],
+      "description": "Proyecto independiente de divulgación y mediación artística digital.",
+      "publisher": {
+        "@id": "https://unokda3dias.github.io/#proyecto"
       }
-    ]
-  }
-  </script>
-
-  <!-- Estilos y comportamiento modular: archivos locales optimizados. -->
-  <link rel="stylesheet" href="./styles.css">
-  <script src="./script.js" defer></script>
-</head>
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://unokda3dias.github.io/#webpage",
+      "url": "https://unokda3dias.github.io/",
+      "name": "UnoKda_3_Días | Arte contemporáneo y curaduría digital",
+      "isPartOf": {
+        "@id": "https://unokda3dias.github.io/#website"
+      },
+      "about": {
+        "@id": "https://unokda3dias.github.io/#proyecto"
+      },
+      "inLanguage": "es"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://unokda3dias.github.io/#proyecto",
+      "name": "UnoKda_3_Días",
+      "description": "Iniciativa independiente de difusión y mediación cultural; no es una galería de representación comercial.",
+      "founder": {
+        "@type": "Person",
+        "name": "Jorge Boullosa Trejo"
+      },
+      "logo": "https://unokda3dias.github.io/assets/identidad/logo-oficial-640.png",
+      "sameAs": [
+        "https://www.instagram.com/_bulhosa_jorge.boullosa.trejo/"
+      ]
+    }
+  ]
+}</script>
+<!-- Estilos y comportamiento modular: archivos locales optimizados. -->
+<link href="./styles.css" rel="stylesheet"/>
+<script defer="" src="./script.js"></script>
+<link href="https://unokda3dias.github.io/" hreflang="es" rel="alternate"/><link href="https://unokda3dias.github.io/en/" hreflang="en" rel="alternate"/><link href="https://unokda3dias.github.io/fr/" hreflang="fr" rel="alternate"/><link href="https://unokda3dias.github.io/pt/" hreflang="pt" rel="alternate"/><link href="https://unokda3dias.github.io/it/" hreflang="it" rel="alternate"/><link href="https://unokda3dias.github.io/de/" hreflang="de" rel="alternate"/><link href="https://unokda3dias.github.io/" hreflang="x-default" rel="alternate"/></head>
 <body>
-  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
-
-  <header class="site-header" id="inicio">
-    <div class="container site-header__inner">
-      <a class="site-brand" href="#inicio" aria-label="UnoKda_3_Días: volver al inicio">
-        <!-- Logo oficial: el PNG original se conserva intacto. Los WebP son copias
+<a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+<header class="site-header" id="inicio">
+<div class="container site-header__inner">
+<a aria-label="UnoKda_3_Días: volver al inicio" class="site-brand" href="#inicio">
+<!-- Logo oficial: el PNG original se conserva intacto. Los WebP son copias
              redimensionadas proporcionalmente para agilizar la carga. -->
-        <picture>
-          <source type="image/webp"
-            srcset="./assets/identidad/logo-oficial-320.webp 320w,
-                    ./assets/identidad/logo-oficial-640.webp 640w"
-            sizes="(max-width: 720px) 88px, 120px">
-          <img
-            src="./assets/identidad/LOGOTIPO_OFICIAL_UNOKda_3_Dias_ORIGINAL.png"
-            alt="Logotipo oficial UnoKda_3_Días. Arte, encuentro, territorio"
-            width="120" height="120" loading="eager" decoding="async" fetchpriority="high">
-        </picture>
-      </a>
-
-      <button class="menu-toggle" id="menu-toggle" type="button"
-        aria-label="Abrir menú de navegación" aria-controls="menu-principal"
-        aria-expanded="false">Menú <span aria-hidden="true">☰</span></button>
-
-      <nav class="site-nav" id="menu-principal" aria-label="Navegación principal">
-        <ul>
-          <li><a href="#proyecto">Proyecto</a></li>
-          <li><a href="#artistas">Artistas</a></li>
-          <li><a href="#videoteca">Videoteca</a></li>
-          <li><a href="#biblioteca">Biblioteca</a></li>
-          <li><a href="#miradas">Miradas</a></li>
-          <li><a class="nav-cta" href="./preinscripcion/">Preinscripción</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main id="contenido">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="container hero__layout">
-        <div class="hero__copy">
-          <p class="eyebrow hero__eyebrow"><span class="tiny-rule" aria-hidden="true"></span> Proyecto de mediación artística digital</p>
-          <h1 id="hero-title">Arte contemporáneo,<br><em>otra forma de mirar.</em></h1>
-          <p class="hero__lead">Una obra puede detener una mirada y abrir una conversación.</p>
-          <p class="hero__description">UnoKda_3_Días crea puentes entre artistas y nuevos públicos mediante investigación, edición curatorial y difusión cultural.</p>
-          <div class="hero__actions">
-            <a class="button button--primary" href="#proyecto">Conocer el proyecto <span aria-hidden="true">↗</span></a>
-            <a class="button button--outline" href="./preinscripcion/">Preinscripción de artistas</a>
-          </div>
-          <div class="hero__undertext"><span>Una iniciativa independiente</span><span>BULHOSART · Jorge Boullosa Trejo</span></div>
-        </div>
-        <div class="hero__stage">
-          <div class="hero__stage-top" aria-hidden="true"><span>UNOKDA / ARCHIVO INSTITUCIONAL</span><span>04 — 14</span></div>
-          <figure class="hero__institutional-image">
-            <!-- Pieza institucional aprobada del carrusel inaugural. Archivo original sin recorte ni modificación. -->
-            <img src="./assets/institucional/04_de_14_ORIGINAL.png" alt="Lámina institucional original de UnoKda_3_Días: Nuestro propósito, crear puentes; composición arquitectónica en piedra y bronce" width="1536" height="1536" decoding="async" fetchpriority="high">
-            <figcaption>Lámina 04/14 · Referencia editorial original de UnoKda_3_Días</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-    <div class="editorial-rail" aria-label="Principios editoriales">
-      <div class="container editorial-rail__inner">
-        <p><span>01</span> La obra permanece íntegra</p>
-        <p><span>02</span> Una lectura singular por artista</p>
-        <p><span>03</span> Un puente con nuevos públicos</p>
-      </div>
-    </div>
-
-    <section class="section section--intro" id="proyecto" aria-labelledby="proyecto-title">
-      <div class="container intro-grid">
-        <div class="intro-copy">
-          <p class="eyebrow"><span class="section-index">01 /</span> El proyecto</p>
-          <h2 id="proyecto-title">Una edición pensada <em>para cada artista.</em></h2>
-        </div>
-        <div class="prose">
-          <p class="prose__opening">El arte no termina en la obra. La mirada, la palabra y el tiempo que dedicamos a observarla también importan.</p>
-          <p>UnoKda_3_Días es una iniciativa independiente de difusión y mediación artística digital. Investiga trayectorias, observa las obras y construye publicaciones curatoriales con un lenguaje editorial propio.</p>
-          <p>La obra conserva su autoría e integridad. El diseño, la investigación y los textos curatoriales constituyen un trabajo editorial diferenciado. No actuamos como galería de representación comercial.</p>
-          <p class="signature">Dirección curatorial y editorial: <strong>Jorge Boullosa Trejo · BULHOSART</strong></p>
-        </div>
-      </div>
-    </section>
-
-    <section class="institutional-section" aria-labelledby="institutional-title">
-      <div class="container institutional-layout">
-        <figure class="institutional-figure">
-          <!-- Publicación institucional aprobada y conservada en su formato original. -->
-          <img src="./assets/institucional/09_de_14_ORIGINAL.png" alt="Lámina institucional original: El arte no necesita pasaporte. Escenario arquitectónico con luz cálida y texto curatorial" width="1503" height="1536" loading="lazy" decoding="async">
-          <figcaption>Archivo institucional · Lámina 09/14</figcaption>
-        </figure>
-        <div class="institutional-copy">
-          <p class="eyebrow">Archivo editorial · I edición</p>
-          <h2 id="institutional-title">El arte no necesita <em>pasaporte.</em></h2>
-          <p>La identidad de UnoKda_3_Días nació del encuentro: artistas, espectadores, territorios y maneras distintas de mirar.</p>
-          <p>Recuperamos aquí dos láminas originales de nuestro archivo inaugural. Son documentos editoriales del proyecto, presentados sin alterar las imágenes aprobadas.</p>
-          <a class="editorial-link" href="#artistas">Explorar el archivo de artistas <span aria-hidden="true">↗</span></a>
-          <span class="institutional-folio" aria-hidden="true">UNO / 03</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--artistas" id="artistas" aria-labelledby="artistas-title">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow"><span class="section-index">02 /</span> Archivo de artistas</p>
-            <h2 id="artistas-title">Obras, trayectorias <em>y procesos.</em></h2>
-          </div>
-          <p>Las fichas incorporarán exclusivamente obras y materiales cuya publicación esté autorizada y verificada.</p>
-        </div>
-        <!-- ARTISTAS: script.js leerá ./data/artistas.json. Nunca generar una obra sustitutiva. -->
-        <div class="artist-grid" id="artist-grid" aria-live="polite">
-          <p class="empty-state" id="artists-empty">El archivo de artistas se incorporará aquí a medida que sus obras y materiales estén revisados y autorizados.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--video" id="videoteca" aria-labelledby="videoteca-title">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow"><span class="section-index">03 /</span> Archivo audiovisual</p>
-            <h2 id="videoteca-title">La mirada <em>en movimiento.</em></h2>
-          </div>
-          <p>Conversaciones, procesos creativos, presentaciones y piezas audiovisuales.</p>
-        </div>
-
-        <div class="filter-bar" role="group" aria-label="Filtrar vídeos por categoría">
-          <button type="button" class="filter-button is-active" data-video-filter="todos" aria-pressed="true">Todos</button>
-          <button type="button" class="filter-button" data-video-filter="entrevistas" aria-pressed="false">Entrevistas</button>
-          <button type="button" class="filter-button" data-video-filter="procesos" aria-pressed="false">Procesos</button>
-          <button type="button" class="filter-button" data-video-filter="videoarte" aria-pressed="false">Videoarte</button>
-          <button type="button" class="filter-button" data-video-filter="exposiciones" aria-pressed="false">Exposiciones</button>
-        </div>
-
-        <!-- VIDEOS: indicar en ./data/videos.json el ID real de YouTube, el título,
+<picture>
+<source sizes="(max-width: 720px) 88px, 120px" srcset="./assets/identidad/logo-oficial-320.webp 320w,
+                    ./assets/identidad/logo-oficial-640.webp 640w" type="image/webp"/>
+<img alt="Logotipo oficial de UnoKda_3_Días" decoding="async" fetchpriority="high" height="120" loading="eager" src="./assets/identidad/LOGOTIPO_OFICIAL_UNOKda_3_Dias_ORIGINAL.png" width="120"/>
+</picture>
+</a>
+<button aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menú de navegación" class="menu-toggle" id="menu-toggle" type="button">Menú <span aria-hidden="true">☰</span></button>
+<nav aria-label="Navegación principal" class="site-nav" id="menu-principal">
+<ul>
+<li><a href="#proyecto">Proyecto</a></li>
+<li><a href="#artistas">Artistas</a></li>
+<li><a href="#videoteca">Videoteca</a></li>
+<li><a href="#biblioteca">Biblioteca</a></li>
+<li><a href="#miradas">Miradas</a></li>
+<li><a class="nav-cta" href="./preinscripcion/index.html">Preinscripción</a></li>
+</ul>
+</nav><div class="language-switcher"><details><summary aria-label="Idioma: Español">ES</summary><ul><li><a aria-current="page" href="./index.html" hreflang="es" lang="es">Español</a></li><li><a href="./en/index.html" hreflang="en" lang="en">English</a></li><li><a href="./fr/index.html" hreflang="fr" lang="fr">Français</a></li><li><a href="./pt/index.html" hreflang="pt" lang="pt">Português</a></li><li><a href="./it/index.html" hreflang="it" lang="it">Italiano</a></li><li><a href="./de/index.html" hreflang="de" lang="de">Deutsch</a></li></ul></details></div>
+</div>
+</header>
+<main id="contenido">
+<section aria-labelledby="hero-title" class="hero">
+<div class="container hero__layout">
+<div class="hero__copy">
+<p class="eyebrow hero__eyebrow"><span aria-hidden="true" class="tiny-rule"></span> Proyecto de mediación artística digital</p>
+<h1 id="hero-title">Arte contemporáneo,<br/><em>otra forma de mirar.</em></h1>
+<p class="hero__lead">Una obra puede detener una mirada y abrir una conversación.</p>
+<p class="hero__description">UnoKda_3_Días crea puentes entre artistas y nuevos públicos mediante investigación, edición curatorial y difusión cultural.</p>
+<div class="hero__actions">
+<a class="button button--primary" href="#proyecto">Conocer el proyecto <span aria-hidden="true">↗</span></a>
+<a class="button button--outline" href="./preinscripcion/index.html">Preinscripción de artistas</a>
+</div>
+<div class="hero__undertext"><span>Una iniciativa independiente</span><span>BULHOSART · Jorge Boullosa Trejo</span></div>
+</div>
+<div class="hero__stage">
+<div aria-hidden="true" class="hero__stage-top"><span>UNOKDA / ARCHIVO INSTITUCIONAL</span><span>04 — 14</span></div>
+<figure class="hero__institutional-image">
+<!-- Pieza institucional aprobada del carrusel inaugural. Archivo original sin recorte ni modificación. -->
+<img alt="Lámina institucional original de UnoKda_3_Días: Nuestro propósito, crear puentes; composición arquitectónica en piedra y bronce" decoding="async" fetchpriority="high" height="1536" src="./assets/institucional/04_de_14_ORIGINAL.png" width="1536"/>
+<figcaption>Lámina 04/14 · Referencia editorial original de UnoKda_3_Días</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<div aria-label="Principios editoriales" class="editorial-rail">
+<div class="container editorial-rail__inner">
+<p><span>01</span> La obra permanece íntegra</p>
+<p><span>02</span> Una lectura singular por artista</p>
+<p><span>03</span> Un puente con nuevos públicos</p>
+</div>
+</div>
+<section aria-labelledby="proyecto-title" class="section section--intro" id="proyecto">
+<div class="container intro-grid">
+<div class="intro-copy">
+<p class="eyebrow"><span class="section-index">01 /</span> El proyecto</p>
+<h2 id="proyecto-title">Una edición pensada <em>para cada artista.</em></h2>
+</div>
+<div class="prose">
+<p class="prose__opening">El arte no termina en la obra. La mirada, la palabra y el tiempo que dedicamos a observarla también importan.</p>
+<p>UnoKda_3_Días es una iniciativa independiente de difusión y mediación artística digital. Investiga trayectorias, observa las obras y construye publicaciones curatoriales con un lenguaje editorial propio.</p>
+<p>La obra conserva su autoría e integridad. El diseño, la investigación y los textos curatoriales constituyen un trabajo editorial diferenciado. No actuamos como galería de representación comercial.</p>
+<p class="signature">Dirección curatorial y editorial: <strong>Jorge Boullosa Trejo · BULHOSART</strong></p>
+</div>
+</div>
+</section>
+<section aria-labelledby="institutional-title" class="institutional-section">
+<div class="container institutional-layout">
+<figure class="institutional-figure">
+<!-- Publicación institucional aprobada y conservada en su formato original. -->
+<img alt="Lámina institucional original: El arte no necesita pasaporte. Escenario arquitectónico con luz cálida y texto curatorial" decoding="async" height="1536" loading="lazy" src="./assets/institucional/09_de_14_ORIGINAL.png" width="1503"/>
+<figcaption>Archivo institucional · Lámina 09/14</figcaption>
+</figure>
+<div class="institutional-copy">
+<p class="eyebrow">Archivo editorial · I edición</p>
+<h2 id="institutional-title">El arte no necesita <em>pasaporte.</em></h2>
+<p>La identidad de UnoKda_3_Días nació del encuentro: artistas, espectadores, territorios y maneras distintas de mirar.</p>
+<p>Recuperamos aquí dos láminas originales de nuestro archivo inaugural. Son documentos editoriales del proyecto, presentados sin alterar las imágenes aprobadas.</p>
+<a class="editorial-link" href="#artistas">Explorar el archivo de artistas <span aria-hidden="true">↗</span></a>
+<span aria-hidden="true" class="institutional-folio">UNO / 03</span>
+</div>
+</div>
+</section>
+<section aria-labelledby="artistas-title" class="section section--artistas" id="artistas">
+<div class="container">
+<div class="section-heading">
+<div>
+<p class="eyebrow"><span class="section-index">02 /</span> Archivo de artistas</p>
+<h2 id="artistas-title">Obras, trayectorias <em>y procesos.</em></h2>
+</div>
+<p>Las fichas incorporarán exclusivamente obras y materiales cuya publicación esté autorizada y verificada.</p>
+</div>
+<!-- ARTISTAS: script.js leerá ./data/artistas.json. Nunca generar una obra sustitutiva. -->
+<div aria-live="polite" class="artist-grid" id="artist-grid">
+<p class="empty-state" id="artists-empty">El archivo de artistas se incorporará aquí a medida que sus obras y materiales estén revisados y autorizados.</p>
+</div>
+</div>
+</section>
+<section aria-labelledby="videoteca-title" class="section section--video" id="videoteca">
+<div class="container">
+<div class="section-heading">
+<div>
+<p class="eyebrow"><span class="section-index">03 /</span> Archivo audiovisual</p>
+<h2 id="videoteca-title">La mirada <em>en movimiento.</em></h2>
+</div>
+<p>Conversaciones, procesos creativos, presentaciones y piezas audiovisuales.</p>
+</div>
+<div aria-label="Filtrar vídeos por categoría" class="filter-bar" role="group">
+<button aria-pressed="true" class="filter-button is-active" data-video-filter="todos" type="button">Todos</button>
+<button aria-pressed="false" class="filter-button" data-video-filter="entrevistas" type="button">Entrevistas</button>
+<button aria-pressed="false" class="filter-button" data-video-filter="procesos" type="button">Procesos</button>
+<button aria-pressed="false" class="filter-button" data-video-filter="videoarte" type="button">Videoarte</button>
+<button aria-pressed="false" class="filter-button" data-video-filter="exposiciones" type="button">Exposiciones</button>
+</div>
+<!-- VIDEOS: indicar en ./data/videos.json el ID real de YouTube, el título,
              la descripción, la fecha de publicación y la miniatura autorizada.
              script.js creará el iframe youtube-nocookie.com SOLO después del clic. -->
-        <div class="video-grid" id="video-grid" aria-live="polite">
-          <p class="empty-state" id="videos-empty">La videoteca abrirá con vídeos seleccionados y autorizados. Todavía no hay contenidos publicados.</p>
-        </div>
-        <template id="video-card-template">
-          <article class="video-card">
-            <button class="video-card__play" type="button">
-              <span class="video-card__image">
-                <img alt="" width="640" height="360" loading="lazy" decoding="async">
-                <span class="video-card__play-icon" aria-hidden="true">▶</span>
-              </span>
-              <span class="video-card__category"></span>
-              <span class="video-card__title"></span>
-            </button>
-          </article>
-        </template>
-      </div>
-    </section>
-
-    <section class="section section--library" id="biblioteca" aria-labelledby="biblioteca-title">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow"><span class="section-index">04 /</span> Ediciones curatoriales</p>
-            <h2 id="biblioteca-title">Biblioteca <em>y hemeroteca.</em></h2>
-          </div>
-          <p>Libros de artista, revistas y catálogos para leer con paso de hojas, desde el móvil o el ordenador.</p>
-        </div>
-
-        <!-- LIBROS: cargar títulos reales en ./data/publicaciones.json.
+<div aria-live="polite" class="video-grid" id="video-grid">
+<p class="empty-state" id="videos-empty">La videoteca abrirá con vídeos seleccionados y autorizados. Todavía no hay contenidos publicados.</p>
+</div>
+<template id="video-card-template">
+<article class="video-card">
+<button class="video-card__play" type="button">
+<span class="video-card__image">
+<img alt="" decoding="async" height="360" loading="lazy" width="640"/>
+<span aria-hidden="true" class="video-card__play-icon">▶</span>
+</span>
+<span class="video-card__category"></span>
+<span class="video-card__title"></span>
+</button>
+</article>
+</template>
+</div>
+</section>
+<section aria-labelledby="biblioteca-title" class="section section--library" id="biblioteca">
+<div class="container">
+<div class="section-heading">
+<div>
+<p class="eyebrow"><span class="section-index">04 /</span> Ediciones curatoriales</p>
+<h2 id="biblioteca-title">Biblioteca <em>y hemeroteca.</em></h2>
+</div>
+<p>Libros de artista, revistas y catálogos para leer con paso de hojas, desde el móvil o el ordenador.</p>
+</div>
+<!-- LIBROS: cargar títulos reales en ./data/publicaciones.json.
              Cada publicación apuntará a páginas WebP/JPG en assets/publicaciones/<slug>/.
              Para un PDF, extraer ANTES sus páginas optimizadas: StPageFlip no abre PDF directamente.
              Las muestras públicas contendrán solo las páginas autorizadas. -->
-        <div class="publication-grid" id="publication-grid" aria-live="polite">
-          <p class="empty-state" id="publications-empty">Los libros y catálogos aparecerán aquí cuando sus ediciones digitales estén aprobadas.</p>
-        </div>
-        <template id="publication-card-template">
-          <article class="publication-card">
-            <button type="button" class="publication-card__open">
-              <span class="publication-card__cover"><img alt="" width="400" height="560" loading="lazy" decoding="async"></span>
-              <span class="publication-card__type"></span>
-              <span class="publication-card__title"></span>
-              <span class="publication-card__author"></span>
-              <span class="publication-card__action">Abrir publicación</span>
-            </button>
-          </article>
-        </template>
-      </div>
-    </section>
-
-    <section class="section section--journal" id="miradas" aria-labelledby="miradas-title">
-      <div class="container journal-layout">
-        <article class="journal-feature">
-          <p class="eyebrow"><span class="section-index">05 /</span> Cuaderno curatorial</p>
-          <h2 id="miradas-title">El arte no termina <em>en la obra.</em></h2>
-          <p>Una figura, la tensión de una línea o la huella del trabajo sobre la materia pueden hacernos detener. No siempre sabemos por qué. Volver a mirar es también una forma de acercarse al proceso de creación.</p>
-          <p>Este espacio reunirá observaciones, preguntas y lecturas curatoriales que inviten a mirar sin imponer una única interpretación.</p>
-          <p class="signature">Jorge Boullosa Trejo · BULHOSART</p>
-        </article>
-        <aside class="journal-aside" aria-label="Sobre las publicaciones curatoriales">
-          <span class="journal-aside__number">03</span>
-          <p>Observar. Preguntar. Volver a mirar.</p>
-          <p class="small-text">Textos originales, edición curatorial y diálogo con artistas y públicos.</p>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section section--participate" id="participar" aria-labelledby="participar-title">
-      <div class="container participate-grid">
-        <div>
-          <p class="eyebrow"><span class="section-index">06 /</span> Futuras ediciones</p>
-          <h2 id="participar-title">Tu obra puede abrir <em>una conversación.</em></h2>
-          <p>Estamos preparando la preinscripción gratuita para artistas interesados en futuras ediciones. Conoce el procedimiento y los documentos necesarios. La presentación de una candidatura no constituye una plaza reservada ni implica pago.</p>
-          <a class="button button--primary" href="./preinscripcion/">Conocer la preinscripción gratuita</a>
-        </div>
-        <aside class="participate-note" aria-labelledby="participate-note-title">
-          <h3 id="participate-note-title">La mirada del público también cuenta.</h3>
-          <p>Cuéntanos qué contenidos te interesan y qué te gustaría encontrar en las próximas ediciones.</p>
-          <!-- Este formulario de Tally es una ENCUESTA, no una inscripción ni una pasarela de pago. -->
-          <a class="text-link" href="https://tally.so/r/BEa067" target="_blank" rel="noopener noreferrer">Responder a la encuesta pública</a>
-        </aside>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer" id="contacto">
-    <div class="container footer-grid">
-      <div>
-        <p class="footer-brand">UnoKda_3_Días</p>
-        <p>Arte · Encuentro · Territorio</p>
-      </div>
-      <div>
-        <p><strong>Dirección curatorial y editorial</strong></p>
-        <p>Jorge Boullosa Trejo · BULHOSART</p>
-      </div>
-      <div>
-        <p><a href="https://www.instagram.com/_bulhosa_jorge.boullosa.trejo/" target="_blank" rel="noopener noreferrer">Instagram oficial</a></p>
-        <!-- Pendiente antes del despliegue público: incorporar páginas legales revisadas. -->
-        <p class="small-text">Información legal y de privacidad: pendiente de publicación.</p>
-      </div>
-    </div>
-    <div class="container footer-bottom">
-      <small>© 2026 UnoKda_3_Días. Obras y textos pertenecen a sus respectivos titulares.</small>
-    </div>
-  </footer>
-
-  <!-- El reproductor no carga recursos de YouTube hasta que alguien selecciona un vídeo. -->
-  <dialog id="video-dialog" class="media-dialog" aria-labelledby="video-dialog-title">
-    <div class="dialog-topbar">
-      <h2 id="video-dialog-title">Reproducción de vídeo</h2>
-      <button type="button" id="video-close" class="dialog-close" aria-label="Cerrar vídeo">Cerrar ×</button>
-    </div>
-    <div id="video-player" class="ratio-16x9"></div>
-    <p id="video-description" class="dialog-description"></p>
-  </dialog>
-
-  <!-- Lectura: script.js cargará StPageFlip 2.0.7 desde el CDN únicamente al abrir un libro.
+<div aria-live="polite" class="publication-grid" id="publication-grid">
+<p class="empty-state" id="publications-empty">Los libros y catálogos aparecerán aquí cuando sus ediciones digitales estén aprobadas.</p>
+</div>
+<template id="publication-card-template">
+<article class="publication-card">
+<button class="publication-card__open" type="button">
+<span class="publication-card__cover"><img alt="" decoding="async" height="560" loading="lazy" width="400"/></span>
+<span class="publication-card__type"></span>
+<span class="publication-card__title"></span>
+<span class="publication-card__author"></span>
+<span class="publication-card__action">Abrir publicación</span>
+</button>
+</article>
+</template>
+</div>
+</section>
+<section aria-labelledby="miradas-title" class="section section--journal" id="miradas">
+<div class="container journal-layout">
+<article class="journal-feature">
+<p class="eyebrow"><span class="section-index">05 /</span> Cuaderno curatorial</p>
+<h2 id="miradas-title">El arte no termina <em>en la obra.</em></h2>
+<p>Una figura, la tensión de una línea o la huella del trabajo sobre la materia pueden hacernos detener. No siempre sabemos por qué. Volver a mirar es también una forma de acercarse al proceso de creación.</p>
+<p>Este espacio reunirá observaciones, preguntas y lecturas curatoriales que inviten a mirar sin imponer una única interpretación.</p>
+<p class="signature">Jorge Boullosa Trejo · BULHOSART</p>
+</article>
+<aside aria-label="Sobre las publicaciones curatoriales" class="journal-aside">
+<span class="journal-aside__number">03</span>
+<p>Observar. Preguntar. Volver a mirar.</p>
+<p class="small-text">Textos originales, edición curatorial y diálogo con artistas y públicos.</p>
+</aside>
+</div>
+</section>
+<section aria-labelledby="participar-title" class="section section--participate" id="participar">
+<div class="container participate-grid">
+<div>
+<p class="eyebrow"><span class="section-index">06 /</span> Futuras ediciones</p>
+<h2 id="participar-title">Tu obra puede abrir <em>una conversación.</em></h2>
+<p>Estamos preparando la preinscripción gratuita para artistas interesados en futuras ediciones. Conoce el procedimiento y los documentos necesarios. La presentación de una candidatura no constituye una plaza reservada ni implica pago.</p>
+<a class="button button--primary" href="./preinscripcion/index.html">Conocer la preinscripción gratuita</a>
+</div>
+<aside aria-labelledby="participate-note-title" class="participate-note">
+<h3 id="participate-note-title">La mirada del público también cuenta.</h3>
+<p>Cuéntanos qué contenidos te interesan y qué te gustaría encontrar en las próximas ediciones.</p>
+<!-- Este formulario de Tally es una ENCUESTA, no una inscripción ni una pasarela de pago. -->
+<a class="text-link" href="https://tally.so/r/BEa067" rel="noopener noreferrer" target="_blank">Responder a la encuesta pública</a>
+</aside>
+</div>
+</section>
+</main>
+<footer class="site-footer" id="contacto">
+<div class="container footer-grid">
+<div>
+<p class="footer-brand">UnoKda_3_Días</p>
+<p>Arte · Encuentro · Territorio</p>
+</div>
+<div>
+<p><strong>Dirección curatorial y editorial</strong></p>
+<p>Jorge Boullosa Trejo · BULHOSART</p>
+</div>
+<div>
+<p><a href="https://www.instagram.com/_bulhosa_jorge.boullosa.trejo/" rel="noopener noreferrer" target="_blank">Instagram oficial</a></p>
+<!-- Pendiente antes del despliegue público: incorporar páginas legales revisadas. -->
+<p class="small-text">Información legal y de privacidad: pendiente de publicación.</p>
+</div>
+</div>
+<div class="container footer-bottom">
+<small>© 2026 UnoKda_3_Días. Obras y textos pertenecen a sus respectivos titulares.</small>
+</div>
+</footer>
+<!-- El reproductor no carga recursos de YouTube hasta que alguien selecciona un vídeo. -->
+<dialog aria-labelledby="video-dialog-title" class="media-dialog" id="video-dialog">
+<div class="dialog-topbar">
+<h2 id="video-dialog-title">Reproducción de vídeo</h2>
+<button aria-label="Cerrar vídeo" class="dialog-close" id="video-close" type="button">Cerrar ×</button>
+</div>
+<div class="ratio-16x9" id="video-player"></div>
+<p class="dialog-description" id="video-description"></p>
+</dialog>
+<!-- Lectura: script.js cargará StPageFlip 2.0.7 desde el CDN únicamente al abrir un libro.
        El visor se compone de imágenes WebP/JPG aprobadas, nunca de PDF en bruto. -->
-  <dialog id="book-dialog" class="book-dialog" aria-labelledby="book-dialog-title">
-    <div class="dialog-topbar">
-      <h2 id="book-dialog-title">Lectura de publicación</h2>
-      <button type="button" id="book-close" class="dialog-close" aria-label="Cerrar libro">Cerrar ×</button>
-    </div>
-    <div class="reader-frame" id="reader-frame">
-      <div id="flipbook" class="flipbook"
-        data-library-src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.min.js"
-        aria-label="Visor con paso de hojas"></div>
-    </div>
-    <div class="reader-toolbar" role="group" aria-label="Controles de lectura">
-      <button type="button" id="book-prev" aria-label="Página anterior" disabled>Anterior</button>
-      <output id="book-counter" aria-live="polite">Página 0 de 0</output>
-      <button type="button" id="book-next" aria-label="Página siguiente" disabled>Siguiente</button>
-      <label for="book-zoom">Zoom</label>
-      <input id="book-zoom" type="range" min="100" max="150" step="10" value="100" aria-label="Ampliación del libro en porcentaje">
-      <output id="book-zoom-value" for="book-zoom">100 %</output>
-      <button type="button" id="book-fullscreen">Pantalla completa</button>
-    </div>
-    <p class="reader-status" id="book-status" role="status"></p>
-  </dialog>
-
-  <noscript>
-    <p class="noscript-warning">La información del proyecto puede leerse sin JavaScript. Para los filtros de vídeo y el paso de hojas es necesario activar JavaScript.</p>
-  </noscript>
+<dialog aria-labelledby="book-dialog-title" class="book-dialog" id="book-dialog">
+<div class="dialog-topbar">
+<h2 id="book-dialog-title">Lectura de publicación</h2>
+<button aria-label="Cerrar libro" class="dialog-close" id="book-close" type="button">Cerrar ×</button>
+</div>
+<div class="reader-frame" id="reader-frame">
+<div aria-label="Visor con paso de hojas" class="flipbook" data-library-src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.min.js" id="flipbook"></div>
+</div>
+<div aria-label="Controles de lectura" class="reader-toolbar" role="group">
+<button aria-label="Página anterior" disabled="" id="book-prev" type="button">Anterior</button>
+<output aria-live="polite" id="book-counter">Página 0 de 0</output>
+<button aria-label="Página siguiente" disabled="" id="book-next" type="button">Siguiente</button>
+<label for="book-zoom">Zoom</label>
+<input aria-label="Ampliación del libro en porcentaje" id="book-zoom" max="150" min="100" step="10" type="range" value="100"/>
+<output for="book-zoom" id="book-zoom-value">100 %</output>
+<button id="book-fullscreen" type="button">Pantalla completa</button>
+</div>
+<p class="reader-status" id="book-status" role="status"></p>
+</dialog>
+<noscript>
+<p class="noscript-warning">La información del proyecto puede leerse sin JavaScript. Para los filtros de vídeo y el paso de hojas es necesario activar JavaScript.</p>
+</noscript>
 </body>
 </html>

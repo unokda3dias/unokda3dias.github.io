@@ -683,3 +683,126 @@ h1,h2,h3 {letter-spacing: -.032em;}
   .footer-grid {grid-template-columns: minmax(0,1fr);gap:26px;}
 }
 @media (max-width: 760px) { html, body {overflow-x: clip;} }
+
+/* V3 · Selector de idiomas nativo: accesible, sin scripts ni dependencias. */
+.site-header__inner { justify-content: space-between; }
+.language-switcher { position: relative; flex: 0 0 auto; align-self: center; z-index: 55; }
+.language-switcher details {position:relative;}
+.language-switcher summary {list-style:none;cursor:pointer;min-width:62px;min-height:42px;display:flex;align-items:center;justify-content:center;color:#f0ebe2;border:1px solid rgba(225,196,135,.5);font:600 .83rem system-ui,sans-serif;letter-spacing:.06em;padding:8px 10px;}
+.language-switcher summary::-webkit-details-marker {display:none;}
+.language-switcher summary::after {content:'⌄';margin-left:6px;color:#e1c487;}
+.language-switcher summary:focus-visible,.language-switcher a:focus-visible {outline:3px solid #e1c487;outline-offset:3px;}
+.language-switcher ul {position:absolute;top:calc(100% + 7px);right:0;z-index:60;list-style:none;padding:6px;margin:0;background:#1b1b1a;border:1px solid #ad925d;box-shadow:0 15px 30px rgba(0,0,0,.28);min-width:158px;}
+.language-switcher li {margin:0;padding:0;}
+.language-switcher li a {display:block;padding:10px 13px;text-decoration:none;font:500 .92rem system-ui,sans-serif;color:#f3efe6;white-space:nowrap;}
+.language-switcher li a:hover,.language-switcher li a[aria-current='page'] {background:#34322b;color:#e1c487;}
+@media(max-width:900px){.site-header__inner{column-gap:9px}.language-switcher summary{min-width:55px;padding-inline:7px}}
+@media(max-width:760px){.language-switcher{order:2;margin-left:auto;margin-right:12px}.menu-toggle{order:3}.site-nav{order:4}.language-switcher summary{min-height:38px}.site-header__inner{justify-content:space-between}}
+@media(max-width:1050px){
+ .site-header__inner{flex-wrap:wrap;min-height:86px;gap:10px;justify-content:space-between;}
+ .site-brand{order:1}.language-switcher{order:2;margin-left:auto;margin-right:6px;}
+ .menu-toggle{order:3;display:inline-flex;}
+ .site-nav{order:4;display:none;flex:0 0 100%;width:100%;padding:6px 0 18px;}
+ .menu-toggle[aria-expanded="true"] + .site-nav{display:block;}
+ .site-nav ul{display:flex;flex-direction:column;align-items:stretch;gap:0;}
+ .site-nav li + li{border-top:1px solid rgba(255,255,255,.13);}
+ .site-nav a{display:block;padding:11px 4px;font-size:.95rem;}
+ .site-nav .nav-cta{display:inline-block;margin-top:10px;padding:11px 16px;}
+}
+@media(max-width:390px){.site-brand img{width:76px}.language-switcher{margin-right:4px}}
+
+
+/* =====================================================================
+   V3.1 · Corrección de identidad de cabecera
+   El logotipo oficial NO se recorta, redibuja ni modifica.
+   El lema aparece como texto CSS adicional, independiente del PNG.
+   ===================================================================== */
+.site-header__inner {
+  min-height: 192px;
+  gap: clamp(14px, 2vw, 28px);
+  padding-block: 12px;
+}
+.site-brand {
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: 192px;
+  min-width: 0;
+  text-align: center;
+  text-decoration: none;
+}
+.site-brand picture,
+.site-brand img {
+  display: block;
+}
+.site-brand img {
+  width: 164px;
+  height: 164px;
+  object-fit: contain;
+}
+/* Repetimos el lema de forma legible FUERA de la imagen original. */
+.site-brand::after {
+  content: 'ARTE · ENCUENTRO · TERRITORIO';
+  display: block;
+  margin-top: -4px;
+  width: 100%;
+  color: #e1c487;
+  font-family: var(--font-interface);
+  font-size: 11.3px;
+  font-weight: 650;
+  line-height: 1.4;
+  letter-spacing: .045em;
+  white-space: nowrap;
+}
+.site-brand:hover::after,
+.site-brand:focus-visible::after { color: #f3efe6; }
+/* Los controles de navegación no encogen el bloque de identidad. */
+.language-switcher { flex-shrink: 0; }
+@media (max-width: 1150px) {
+  .site-header__inner { min-height: 177px; }
+  .site-brand { width: 178px; }
+  .site-brand img { width: 149px; height: 149px; }
+  .site-brand::after { font-size: 10.8px; }
+}
+@media (max-width: 1050px) {
+  .site-header__inner { min-height: 168px; column-gap: 10px; }
+  .site-brand { width: 164px; }
+  .site-brand img { width: 143px; height: 143px; }
+}
+@media (max-width: 760px) {
+  .site-header__inner { min-height: 180px; column-gap: 7px; row-gap: 0; padding-block: 8px; }
+  .site-brand { width: 157px; }
+  .site-brand img { width: 144px; height: 144px; }
+  .site-brand::after { content: "ARTE · ENCUENTRO\A TERRITORIO"; white-space: pre; font-size: 11.2px; letter-spacing: .035em; line-height: 1.28; margin-top: -3px; }
+  .language-switcher { margin-left: auto; margin-right: 4px; }
+  .language-switcher summary { min-width: 49px; }
+  .menu-toggle { min-width: 60px; justify-content: center; padding: 8px; }
+  .site-nav { margin-top: 3px; }
+  html { scroll-padding-top: 180px; }
+}
+/* En móviles pequeños: menú reducido a icono para dar prioridad a la marca. */
+@media (max-width: 440px) {
+  .site-header__inner { min-height: 172px; }
+  .site-brand { width: 148px; }
+  .site-brand img { width: 136px; height: 136px; }
+  .site-brand::after { font-size: 10.7px; }
+  .menu-toggle { min-width: 43px; width: 43px; height: 42px; font-size: 0; gap: 0; }
+  .menu-toggle span { font-size: 1.3rem; line-height: 1; }
+  .language-switcher { margin-right: 0; }
+  .language-switcher summary { min-width: 47px; padding-inline: 6px; }
+  html { scroll-padding-top: 172px; }
+}
+@media (max-width: 350px) {
+  .site-header__inner { column-gap: 4px; }
+  .site-brand { width: 142px; }
+  .site-brand img { width: 130px; height: 130px; }
+}
+/* Preinscripción: el mayor logotipo comparte espacio con la navegación auxiliar. */
+@media (max-width: 760px) {
+  .application-page .site-header__inner { row-gap: 5px; }
+  .application-page .apply-nav { flex-basis: 100%; max-width: none; order: 4; padding-bottom: 9px; justify-content: flex-start; }
+  .application-page .language-switcher { order: 2; margin-left: auto; }
+}
