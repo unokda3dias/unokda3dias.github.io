@@ -68,3 +68,13 @@
 .apply-nav {margin-left:auto;}
 .application-page .language-switcher {margin-left:14px;}
 @media(max-width:740px){.application-page .site-header__inner{display:flex;flex-wrap:wrap;align-items:center}.application-page .language-switcher{margin-left:auto;order:2}.application-page .apply-nav{order:3;flex-basis:100%;margin:0;justify-content:flex-start;gap:12px;padding-bottom:12px;display:flex;flex-wrap:wrap}.application-page .apply-nav a{font-size:.85rem;}}
+
+/* Formulario editorial institucional: revisión cerrada. */
+.apply-form-brand{background:var(--ink);padding:16px;margin:-1px 0 24px;display:grid;place-items:center;border-bottom:2px solid var(--gold)}
+.apply-form-brand img{width:106px;height:88px;object-fit:contain}
+.apply-fields{border:0;min-inline-size:0;padding:0;margin:24px 0;display:grid;gap:17px;color:var(--ink);font-family:var(--font-interface)}
+.apply-fields label{font-size:.88rem;font-weight:600;line-height:1.55}
+.apply-fields input:not([type=checkbox]){display:block;width:100%;min-height:46px;margin-top:6px;padding:10px 12px;border:1px solid var(--hairline);background:var(--ivory);border-radius:var(--radius-sm);font:inherit;color:var(--ink)}
+.apply-fields label:has(input[type=checkbox]){display:grid;grid-template-columns:18px 1fr;gap:10px;font-weight:400;align-items:start}
+.apply-fields input[type=checkbox]{width:17px;height:17px;margin:3px 0 0;accent-color:var(--gold-dark)}
+.apply-form-card .button{width:100%;margin-top:4px}.apply-legal-links{padding-block:16px}
