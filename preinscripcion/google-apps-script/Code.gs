@@ -36,6 +36,7 @@ function prepararCartera() {
   sheet.setFrozenRows(1);
   sheet.getRange('A1:M1').setFontWeight('bold');
   props.setProperty(UK3D.PROPERTY_SHEET_ID, book.getId());
+  instalarDepuracion_();
   Logger.log('Cartera privada: ' + book.getUrl());
 }
 
@@ -78,6 +79,7 @@ function doPost(e) {
         'Sí', 'Sí', UK3D.VERSION, 'PREINSCRITO', expiry.toISOString().slice(0,10), ''
       ]);
       SpreadsheetApp.flush();
+      notificarSinDatos_(id);
     } finally {
       lock.releaseLock();
     }
@@ -85,6 +87,41 @@ function doPost(e) {
   } catch (error) {
     console.error('Error en recepción UnoKda:', error && error.message ? error.message : 'desconocido');
     return resultado_('error', 'No hemos podido confirmar el registro. Vuelve a intentarlo o escribe al correo institucional.');
+  }
+}
+/**
+ * La fecha de eliminación se registra en la columna L.
+ * Para los seleccionados, la dirección ajustará columna K a SELECCIONADO
+ * y la columna L a seis meses desde la fecha programada de selección.
+ * La depuración se ejecuta una vez al día mediante un disparador privado.
+ */
+function instalarDepuracion_() {
+  const exists = ScriptApp.getProjectTriggers().some(t => t.getHandlerFunction() === 'depurarCartera');
+  if (!exists) ScriptApp.newTrigger('depurarCartera').timeBased().everyDays(1).atHour(3).create();
+}
+function depurarCartera() {
+  const id = PropertiesService.getScriptProperties().getProperty(UK3D.PROPERTY_SHEET_ID);
+  if (!id) return;
+  const sh = SpreadsheetApp.openById(id).getSheetByName('Preinscripciones');
+  const data = sh.getDataRange().getValues();
+  const today = Utilities.formatDate(new Date(), 'UTC', 'yyyy-MM-dd');
+  for (let row = data.length; row >= 2; row--) {
+    const value = data[row - 1][11];
+    const expiry = value instanceof Date ? Utilities.formatDate(value, 'UTC', 'yyyy-MM-dd') : String(value || '').slice(0, 10);
+    if (/^\d{4}-\d{2}-\d{2}$/.test(expiry) && expiry < today) sh.deleteRow(row);
+  }
+}
+/** No incluye nombres ni direcciones de artistas en la notificación. */
+function notificarSinDatos_(sheetId) {
+  try {
+    if (MailApp.getRemainingDailyQuota() < 1) return;
+    MailApp.sendEmail({
+      to: 'jovenboullosa@gmail.com',
+      subject: 'UnoKda_3_Días · Nueva preinscripción',
+      body: 'Se ha registrado una nueva preinscripción. Consulta la cartera privada:\nhttps://docs.google.com/spreadsheets/d/' + sheetId + '/edit'
+    });
+  } catch (error) {
+    console.warn('Registro guardado, notificación no enviada');
   }
 }
 function limpiar_(v, max) {
