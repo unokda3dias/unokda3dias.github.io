@@ -76,38 +76,15 @@ button[disabled]{opacity:.55;cursor:not-allowed}.state{min-height:1.7em;margin:1
   const pending = document.getElementById("pending");
   const button = document.getElementById("send");
   const url = typeof cfg.scriptUrl === "string" ? cfg.scriptUrl.trim() : "";
-  const urlValid = /^https:\/\/script\.google\.com\/macros\/s\/[a-zA-Z0-9_-]+\/exec$/.test(url);
-  const productionReady = cfg.enabled === true && cfg.legalReviewed === true && urlValid;
-  const trial = cfg.testEnabled === true &&
-    new URLSearchParams(window.location.search).get("modo") === "prueba" && urlValid;
-  if (!productionReady && !trial) return;
+  const ready = cfg.enabled === true && cfg.legalReviewed === true &&
+    /^https:\/\/script\.google\.com\/macros\/s\/[a-zA-Z0-9_-]+\/exec$/.test(url);
+  if (!ready) return;
   form.action = url;
   form.method = "post";
   form.querySelectorAll("input:disabled").forEach(function(input){input.disabled = false;});
   button.disabled = false;
-  if (trial && !productionReady) {
-    // Solo datos ficticios: evita que se envíen inadvertidamente datos reales.
-    const demo = {
-      nombre: "PRUEBA FORMULARIO OFICIAL UNOKDA",
-      pais: "España",
-      localidad: "Prueba",
-      disciplina: "Comprobación de funcionamiento",
-      email: "prueba-formulario-oficial@example.com"
-    };
-    Object.keys(demo).forEach(function(id){
-      const field = document.getElementById(id);
-      field.value = demo[id];
-      field.readOnly = true;
-    });
-    document.getElementById("adulto").checked = true;
-    document.getElementById("consentimiento").checked = true;
-    pending.textContent = "MODO DE PRUEBA: se enviarán exclusivamente datos ficticios. La recepción pública sigue cerrada.";
-    button.textContent = "Enviar prueba ficticia";
-    status.textContent = "Pulsa una sola vez. Después confirma que el registro aparece en la cartera privada.";
-  } else {
-    pending.hidden = true;
-    status.textContent = "Al enviar, Google mostrará una pantalla de confirmación del registro.";
-  }
+  pending.hidden = true;
+  status.textContent = "Al enviar, Google mostrará una pantalla de confirmación del registro.";
 })();
 </script>
 </body></html>
