@@ -80,7 +80,7 @@ if(cfg.officialEmail&&/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cfg.officialEmail)){
 const p=document.getElementById("contacto-oficial");p.textContent="Contacto institucional: ";const a=document.createElement("a");a.href="mailto:"+cfg.officialEmail;a.textContent=cfg.officialEmail;p.append(a);
 }
 if(!ready)return;
-form.access_key.value=cfg.accessKey;fields.forEach(x=>x.disabled=false);button.disabled=false;pending.hidden=true;msg.textContent="";
+document.getElementById("access_key").value=cfg.accessKey;fields.forEach(x=>x.disabled=false);button.disabled=false;pending.hidden=true;msg.textContent="";
 form.noValidate=false;
 form.addEventListener("submit",async function(ev){
 ev.preventDefault();if(!form.reportValidity())return;
