@@ -1,7 +1,9 @@
-/* Activar únicamente tras crear el correo oficial, obtener y verificar la clave del proveedor de formularios y validar la información jurídica. */
+/* UnoKda_3_Días. Se habilita SOLO tras desplegar el receptor en Apps Script,
+   comprobar que el registro aparece en Google Sheets privado y revisar privacidad.
+   No incluir IDs de Sheets, credenciales ni datos de artistas en este archivo público. */
 window.UNOKDA_FORM_CONFIG = Object.freeze({
   enabled: false,
-  accessKey: "",
-  officialEmail: "",
+  scriptUrl: "",
+  officialEmail: "jovenboullosa@gmail.com",
   legalReviewed: false
 });
